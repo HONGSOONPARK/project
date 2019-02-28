@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: intro_park
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: ParkHongSoon
+Implementation-Vendor-Id: hs
+Build-Jdk: 1.8.0_151
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/intro_park
+Created-By: Maven Integration for Eclipse
+
