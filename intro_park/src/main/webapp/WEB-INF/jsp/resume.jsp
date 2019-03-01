@@ -29,7 +29,6 @@
 
 <body id="page-top">
 
-  <h1>짜바바바바밥바 <img src='<c:url value="/resources/lion.jpg"/>'/> </h1>
   <h2>${name}</h2>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
