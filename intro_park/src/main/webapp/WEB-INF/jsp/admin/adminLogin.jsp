@@ -12,7 +12,7 @@
   <meta content="" name="keywords">
   <meta content="" name="description">
 
- <title>홍순's</title>
+ <title>홍순's 관리자 페이지</title>
  
   <!-- Favicons -->
   <link href="<c:url value='/resources/bootstrap/kelvin/img/favicon.png'/>" rel="icon">
@@ -42,82 +42,45 @@
 
 <body data-spy="scroll" data-offset="64" data-target="#section-topbar">
 
-  <div id="section-topbar">
-    <div id="topbar-inner">
-      <div class="container">
-        <div class="row">
-          <div class="dropdown">
-            <ul id="nav" class="nav">
-              <li class="menu-item"><a class="smothscroll" href="#about" title="About"><i class="fa fa-user"></i></a></li>
-              <li class="menu-item"><a class="smothscroll" href="#resume" title="Resume"><i class="fa fa-file-text-o"></i></a></li>
-              <li class="menu-item"><a class="smothscroll" href="#section-portfolio" title="Portfolio"><i class="fa fa-briefcase"></i></a></li>
-              <li class="menu-item"><a class="smothscroll" href="#contact" title="Contact"><i class="fa fa-envelope"></i></a></li>
-            </ul>
-            <!--/ uL#nav -->
-          </div>
-          <!-- /.dropdown -->
 
-          <div class="clear"></div>
+
+
+  <section id="adminLogin" name="adminLogin">
+    <div id="intro">
+      <div class="container">
+      	<div class="row">
+      	   <div class="col-lg-5 col-lg-offset-3">
+			<div class="img">
+				<img class="img-responsive" src="<c:url value='/resources/hong.jpg'/>" alt="" title="">
+			</div>
+		</div>
+      	
+      	</div>
+        <div class="row">
+          <div class="col-lg-3 col-lg-offset-3">
+            <h5>관리자 로그인</h5>
+          </div>
+		            
+          <div class="col-lg-6  col-lg-offset-3">
+            <span><h5>이름</h5><input type="text" id="id" name="id" value=""/></span>
+            <span><h5>암호</h5><input type="text" id="password" name="password" value=""/></span>
+          </div>
+          
+          <div class="col-lg-3 col-lg-offset-3">
+            <input type="button" class="admin_button" id="" name="" value="간다" />
+          </div>
+          
+      
+          
+
+          
         </div>
         <!--/.row -->
       </div>
       <!--/.container -->
-
-      <div class="clear"></div>
     </div>
-    <!--/ #topbar-inner -->
-  </div>
-  <!--/ #section-topbar -->
-
-  <div id="headerwrap">
-    <div class="container">
-      <div class="row centered">
-        <div class="col-lg-12">
-          <h1>Park Hong Soon</h1>
-          <h3>Web Developer | phs39@naver.com</h3>
-        </div>
-        <!--/.col-lg-12 -->
-      </div>
-      <!--/.row -->
-    </div>
-    <!--/.container -->
-  </div>
-  <!--/.#headerwrap -->
-
-
-<!-- 소개 -->
-<%@include file="/WEB-INF/jsp/section/about.jsp" %>
-<!-- 교육, 경력-->
-<%@include file="/WEB-INF/jsp/section/resume.jsp" %>
-<!-- 스킬-->
-<%@include file="/WEB-INF/jsp/section/skill.jsp" %>
-<!-- 포트폴리오-->
-<%@include file="/WEB-INF/jsp/section/portfolio.jsp" %>
-
-<!-- 접근-->
-<%@include file="/WEB-INF/jsp/section/contact.jsp" %>
-
-
-
-
-  
-
-  <div id="copyrights">
-    <div class="container">
-      <p>
-        &copy; Copyrights <strong>Kelvin</strong>. All Rights Reserved
-      </p>
-      <div class="credits">
-        <!--
-          You are NOT allowed to delete the credit link to TemplateMag with free version.
-          You can delete the credit link only if you bought the pro version.
-          Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/kelvin-bootstrap-resume-template/
-          Licensing information: https://templatemag.com/license/
-        -->
-        Created with Kelvin template by <a href="https://templatemag.com/">TemplateMag</a>
-      </div>
-    </div>
-  </div>
+    <!--/ #intro -->
+  </section>
 
   <!-- JavaScript Libraries -->
   <script src="<c:url value='/resources/bootstrap/kelvin/lib/jquery/jquery.min.js'/>"></script>

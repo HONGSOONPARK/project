@@ -1,0 +1,4 @@
+---
+ log4jdbc:
+      spylogdelegator:
+      name : log.slf4j.Slf4jSpyLogDelegator

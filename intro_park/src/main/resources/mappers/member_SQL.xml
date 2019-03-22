@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="hs.intro.mapper.MemberMapper">
+
+	<select id="memberList" parameterType="hs.intro.member.MemberVO" resultType="hs.intro.member.MemberVO">
+		SELECT A.MEMBER_NO,
+		       A.MEMBER_ID,
+		       A.MEMBER_NICK,
+		       A.MEMBER_ROLE
+		  FROM MEMBER_INFO A JOIN MEMBER_INFO_DETAIL B ON A.MEMBER_NO = B.MEMBER_NO
+		 WHERE A.MEMBER_ID = #{member_id};
+	</select>
+
+</mapper>
+
+

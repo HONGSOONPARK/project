@@ -23,10 +23,24 @@ public class MainController {
         return "agency";
     }
 
-
 	@GetMapping("/")
     public String main(Model model){
         return "index";
+    }
+
+	@GetMapping("/adminLogin")
+    public String adminLogin(){
+        return "admin/adminLogin";
+    }
+
+	@GetMapping("/adminMain")
+    public String adminMain(){
+        return "admin/adminMain";
+    }
+
+	@GetMapping("/loginSuccess")
+    public String loginSuccess(Model model){
+        return "loginSuccess";
     }
 
 

@@ -8,25 +8,22 @@
         <div class="row">
 
           <div class="col-lg-2">
-            <h5>CONTACT</h5>
+            <h5>연락처</h5>
           </div>
           <div class="col-lg-4">
             <p>
-              <t>Email</t><br/> contact@example.com <br/>
+              <t>Email</t><br/> phs39@naver.com <br/>
             </p>
             <p>
-              <t>Adress</t><br/> Some Ave. 987 <br/> Postal 23892 <br/> London, England. <br/>
+              <t>Adress</t><br/> 충청북도 <br/> 청주시 흥덕구 가경동 <br/>
             </p>
             <p>
-              <t>Phone</t><br/> +55 8933-2383 <br/>
+              <t>Phone</t><br/> +82 10-4123-2517 <br/>
             </p>
             <p>
               <t>Social Links</t><br/>
-              <a href="#"><i class="fa fa-dribbble"></i></a>
-              <a href="#"><i class="fa fa-twitter"></i></a>
-              <a href="#"><i class="fa fa-facebook"></i></a>
-              <a href="#"><i class="fa fa-linkedin"></i></a>
-              <a href="#"><i class="fa fa-apple"></i></a>
+              <a href="https://github.com/HONGSOONPARK/"><i class="fa fa-github-square"></i></a>
+              <a href="https://www.facebook.com/people/%EB%B0%95%ED%99%8D%EC%88%9C/100000494146947"><i class="fa fa-facebook"></i></a>
             </p>
           </div>
           <div class="col-lg-6">
