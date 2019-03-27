@@ -73,6 +73,18 @@ hr {
   padding: 0;
 }
 
+div p{
+	font-family: 13px;
+}
+
+div p more{
+	font-size: 13px;
+}
+
+ul more li{
+	font-size: 13px;
+}
+
 /*---------------------------------------------------
 3.1 Topbar
 ---------------------------------------------------*/
@@ -160,8 +172,8 @@ SECTION WRAPS
 /* Header Wrap */
 
 #headerwrap {
-  background: url(../img/header-bg.jpg) no-repeat center top;
-/*   background: url(../../resources/hong.jpg) no-repeat center top; */
+/*   background: url(../img/header-bg.jpg) no-repeat center top; */
+  background: url(../img/header-park.jpg) no-repeat center top;
   margin-top: 60px;
   padding-top: 140px;
   text-align: center;
@@ -179,9 +191,17 @@ SECTION WRAPS
   background-size: cover;
 }
 
+
+
 #headerwrap h1 {
   font-size: 80px;
   color: white;
+}
+
+#headerwrap .container{
+	background-color:black;
+	background-color: rgba( 0,0,0, 0.5 );
+	
 }
 
 #headerwrap h3 {
@@ -269,6 +289,15 @@ SECTION WRAPS
 
 .desc p {
   color: #2f2f2f;
+  font-size: 13px;
+}
+
+.desc i {
+  font-size: 15px;
+}
+
+#contact i{
+	font-size: 40px;
 }
 
 .desc t {
@@ -461,3 +490,27 @@ sm {
 	margin-top: 35px;
 }
 
+
+.modal-body span, .modal-body p{
+	font-size:13px;
+	color: black;
+	line-height: 22px;
+	margin-bottom: 9px;
+}
+
+.modal-body p strong{
+	font-size:13px;
+	font-style: italic;
+}
+
+.modal-body p span{
+	font-size:14px;
+	font-weight: bolder;
+}
+
+
+
+#int p{
+	font-size: 13px;
+	
+}

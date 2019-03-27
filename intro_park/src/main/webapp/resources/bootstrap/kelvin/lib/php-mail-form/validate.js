@@ -1,6 +1,28 @@
+$.fn.serializeObject = function(){
+	    var o = {};
+	    var a = this.serializeArray();
+	    $.each(a, function() {
+	    	var name = $.trim(this.name),
+	    		value = $.trim(this.value);
+	    	
+	        if (o[name]) {
+	            if (!o[name].push) {
+	                o[name] = [o[name]];
+	            }
+	            o[name].push(value || '');
+	        } else {
+	            o[name] = value || '';
+	        }
+	    });
+	    return o;
+	};
+	
 jQuery(document).ready(function($) {
+	
+	
+	
   "use strict";
-
+  
   //Contact
   $('form.php-mail-form').submit(function() {
     var f = $(this).find('.form-group'),
@@ -89,31 +111,46 @@ jQuery(document).ready(function($) {
       }
     });
     if (ferror) return false;
-    else var str = $(this).serialize();
+    else {
+    	var str = $(this).serialize();
+    }
     var action = $(this).attr('action');
     if( ! action ) {
-      action = 'contactform/contactform.php';
+      action = '/intro_park/contact';
     }
     
     var this_form = $(this);
     this_form.find('.sent-message').slideUp();
     this_form.find('.error-message').slideUp();
     this_form.find('.loading').slideDown();
-    $.ajax({
-      type: "POST",
-      url: action,
-      data: str,
-      success: function(msg) {
-        if (msg == 'OK') {
-          this_form.find('.loading').slideUp();
-          this_form.find('.sent-message').slideDown();
-          this_form.find("input, textarea").val('');
-        } else {
-          this_form.find('.loading').slideUp();
-          this_form.find('.error-message').slideDown().html(msg);
-        }
-      }
-    });
+//    alert(JSON.stringify(str) + " // \n"+str);
+//    alert(JSON.stringify($(this).serializeObject()));
+	
+	// 추가한 row의 Data와 DB table의 Data를 비교하여 중보여부를 판단한다 
+ 	$.ajax({	
+		type: "POST",
+        url: action,
+		dataType: "text",
+		data : JSON.stringify($(this).serializeObject()),
+//		data : $(this).serialize(),
+		contentType:"application/json;charset=UTF-8",
+//		contentType:"charset=UTF-8",
+		success : function(data, status, xhr) {
+	        if (data == 'OK') {
+	          this_form.find('.loading').slideUp();
+	          this_form.find('.sent-message').slideDown();
+	          this_form.find("input, textarea").val('');
+	        } else {
+	          this_form.find('.loading').slideUp();
+	          this_form.find('.error-message').slideDown().html(data);
+	        }
+		
+		},
+		error: function(jqXHR, textStatus, errorThrown) {
+			alert("실패 :"+errorThrown);
+		}
+	});
+    
     return false;
   });
 

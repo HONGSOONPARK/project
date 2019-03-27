@@ -5,16 +5,16 @@ spring:
       suffix: .jsp
   datasource:
 #    Raspberry Pi
-#    url: jdbc:mysql://192.168.219.111:3306/intro?serverTimezone=UTC&useUnicode=true&charaterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://192.168.219.111:3306/intro?serverTimezone=UTC&useUnicode=true&charaterEncoding=utf-8&useSSL=false
     # Centos 7
-    url: jdbc:mysql://116.45.90.231:3306/intro?serverTimezone=UTC&useUnicode=true&charaterEncoding=utf-8&useSSL=false
+#    url: jdbc:mysql://116.45.90.231:3306/intro?serverTimezone=UTC&useUnicode=true&charaterEncoding=utf-8&useSSL=false
     username: intro
     password: intro123
     driver-class-name: com.mysql.cj.jdbc.Driver
     
   jmx:
      enabled: false
-     default-domain: phsoon.pe.kr
+     default-domain: hongsoon.ga
       
     
 #  jpa:

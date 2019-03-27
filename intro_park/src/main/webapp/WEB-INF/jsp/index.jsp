@@ -22,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Raleway:400,300,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="<c:url value='/resources/bootstrap/kelvin/lib/bootstrap/css/bootstrap.min.css'/>" rel="stylesheet">
+  <link href="<c:url value='/resources/bootstrap/kelvin/lib/bootstrap/css/bootstrap.css'/>" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
   <link href="<c:url value='/resources/bootstrap/kelvin/lib/font-awesome/css/font-awesome.min.css'/>" rel="stylesheet">
@@ -50,7 +50,7 @@
             <ul id="nav" class="nav">
               <li class="menu-item"><a class="smothscroll" href="#about" title="About"><i class="fa fa-user"></i></a></li>
               <li class="menu-item"><a class="smothscroll" href="#resume" title="Resume"><i class="fa fa-file-text-o"></i></a></li>
-              <li class="menu-item"><a class="smothscroll" href="#section-portfolio" title="Portfolio"><i class="fa fa-briefcase"></i></a></li>
+              <li class="menu-item"><a class="smothscroll" href="#portfolio" title="Portfolio"><i class="fa fa-briefcase"></i></a></li>
               <li class="menu-item"><a class="smothscroll" href="#contact" title="Contact"><i class="fa fa-envelope"></i></a></li>
             </ul>
             <!--/ uL#nav -->
@@ -70,12 +70,12 @@
   <!--/ #section-topbar -->
 
   <div id="headerwrap">
-    <div class="container">
+    <div class="container" style="width: 100%">
       <div class="row centered">
-        <div class="col-lg-12">
+<!--         <div class="col-lg-12"> -->
           <h1>Park Hong Soon</h1>
           <h3>Web Developer | phs39@naver.com</h3>
-        </div>
+<!--         </div> -->
         <!--/.col-lg-12 -->
       </div>
       <!--/.row -->
@@ -100,7 +100,7 @@
 
 
 
-  
+
 
   <div id="copyrights">
     <div class="container">
@@ -120,16 +120,15 @@
   </div>
 
   <!-- JavaScript Libraries -->
-  <script src="<c:url value='/resources/bootstrap/kelvin/lib/jquery/jquery.min.js'/>"></script>
-  <script src="<c:url value='/resources/bootstrap/kelvin/lib/bootstrap/js/bootstrap.min.js'/>"></script>
+  <script src="<c:url value='/resources/bootstrap/kelvin/js/jquery-2.1.3.min.js'/>"></script>
+  <script src="<c:url value='/resources/bootstrap/kelvin/lib/bootstrap/js/bootstrap.js'/>"></script>
   <script src="<c:url value='/resources/bootstrap/kelvin/lib/php-mail-form/validate.js'/>"></script>
   <script src="<c:url value='/resources/bootstrap/kelvin/lib/chart/chart.js'/>"></script>
   <script src="<c:url value='/resources/bootstrap/kelvin/lib/easing/easing.min.js'/>"></script>
-
-
 
   <!-- Template Main Javascript File -->
   <script src="<c:url value='/resources/bootstrap/kelvin/js/main.js'/>"></script>
 
 </body>
+
 </html>

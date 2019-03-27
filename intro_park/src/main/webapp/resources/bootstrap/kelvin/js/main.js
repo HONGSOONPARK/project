@@ -41,8 +41,26 @@ jQuery(document).ready(function( $ ) {
   	  var myDoughnut = new Chart(document.getElementById($(this).attr('id')).getContext("2d")).Doughnut(doughnutData);
   	});
   	
-  
-
-  
+//	  $("#contact_submit").on("click",function(){
+//		  alert("준비 중입니다!");
+//			return false;
+//	  })
   
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

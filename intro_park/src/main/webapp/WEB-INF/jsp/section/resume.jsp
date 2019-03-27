@@ -107,8 +107,38 @@
         </p>
         
         <p><a href="#"><i class="icon-file"></i></a>
-              <sm>소프트웨어기술자 열람  &nbsp;<span class="glyphicon glyphicon-search"></span></sm>
+<!--               <sm>소프트웨어기술자 열람  &nbsp;<span class="glyphicon glyphicon-search"></span></sm> -->
+              <sm><a href="#software_engineer" class="" data-toggle="modal">소프트웨어기술자 열람</a>  &nbsp;<span class="glyphicon glyphicon-search"></span></sm>
         </p>
+        
+          <div id="software_engineer" class="modal">
+		     <div class="modal-dialog">
+		          <div class="modal-content">
+		               <div class="modal-header">
+		                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                    <h4 class="modal-title">소프트웨어 기술자<a href="<c:url value='/resources/박홍순_소프트웨어기술자경력증명서.pdf'/> "><small>( pdf&nbsp;<span class="glyphicon glyphicon-floppy-disk"></span> )</small></a></h4>
+		               </div>
+		               <div class="modal-body">
+		               <img src="<c:url value='/resources/박홍순_소프트웨어기술자경력증명서_01.jpg'/>" style="max-width: 100%; height: auto;"/>
+		               <img src="<c:url value='/resources/박홍순_소프트웨어기술자경력증명서_02.jpg'/>" style="max-width: 100%; height: auto;" />
+		               </div>
+
+		               
+		               
+		               <div class="modal-footer">
+		                    <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+<!-- 		                    <button type="button" class="btn btn-primary">자기소개서 받기<small>(PDF)</small></button> -->
+		               </div>
+		          </div>
+		     </div>
+			</div>
+        
+        
+        
+        
+        
+        
+        
       </div>
       
     <!--/.row -->

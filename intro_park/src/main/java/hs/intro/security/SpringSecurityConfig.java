@@ -55,8 +55,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter  {
 	        .and()
 	            // csrf 사용유무 설정
 	            // csrf 설정을 사용하면 모든 request에 csrf 값을 함께 전달해야한다.
-	            .csrf()
-	        .and()
+	            .csrf().disable()
+//	        .and()
 	            // 로그인 프로세스가 진행될 provider
 	            .authenticationProvider(authProvider)
 	            .headers()
