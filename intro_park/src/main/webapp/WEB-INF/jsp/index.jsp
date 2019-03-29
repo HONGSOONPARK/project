@@ -3,16 +3,26 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137183362-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-137183362-1');
+	</script>
+		
 
- <title>홍순's</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Contnt-Type" content="text/html; charset=UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<meta http-equiv="Subject" content="웹 개발자 포트폴리오" />
+	<meta http-equiv="Author" content="PARK HONG SOON" />
+	<meta name="Keywords" content="Web, html, 웹 표준, 웹 개발, 박홍순, hongsoon, 포트폴리오, portfolio, 취업, 웹 개발자 포트폴리오, 반응형웹, Spring, 전자정부프레임워크, bootstrap, jsp, jquery, css, 개발자 포트폴리오, 자기소개서, PARK HONG SOON" />
+
+ <title>박홍순 자기소개</title>
  
   <!-- Favicons -->
   <link href="<c:url value='/resources/bootstrap/kelvin/img/favicon.png'/>" rel="icon">

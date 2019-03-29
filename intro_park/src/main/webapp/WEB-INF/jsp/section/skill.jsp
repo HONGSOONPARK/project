@@ -33,12 +33,12 @@
         </div>
 
         <div class="col-lg-2 col-lg-offset-3 centered">
-          <canvas id="html" height="100" width="100" value="60"></canvas>
+          <canvas id="html" height="100" width="100" value="50"></canvas>
           <p>HTML/CSS</p>
           <br>
         </div>
         <div class="col-lg-2 centered">
-          <canvas id="jsp" height="100" width="100" value="60"></canvas>
+          <canvas id="jsp" height="100" width="100" value="50"></canvas>
           <p>Jsp</p>
           <br>
         </div>

@@ -593,7 +593,7 @@
         
         <div id="pr_p" class="col-lg-3">
           <t>개인프로젝트</t><a href="https://github.com/HONGSOONPARK/bean"><i class="fa fa-github-square"></i></a>
-          <p>프로젝트 &nbsp;- 스터디 프로젝트</p>
+          <p>프로젝트 &nbsp;- 복습 프로젝트</p>
           <p><more>SPRING SECURITY,REST API,권한관리 등 공부목적</more></p>
           <p>수행기간 &nbsp;</p>
           <p><more>2018.11 ~ 2019.02 &nbsp;(3개월)</more></p>
@@ -603,7 +603,7 @@
           		동적인 메뉴(게시판)생성 및 관리<br/>
           		사용자권한 생성 및 관리<br/>
           		공통코드사용한 시스템 설계<br/>
-          		카카오톡 로그인을 통한 회원관리기능<br/>
+          		SNS 활용한 로그인 추가<br/>
           	</more>
           </p>
 		  <p>성과</p>
@@ -627,7 +627,7 @@
 			<div class="ih-item square effect13 top_to_bottom">
 		    <a href="http://hongsoon.ga:8888">
 		    	<div class="img">
-		        	<img class="img-responsive" src="<c:url value='/resources/bootstrap/kelvin/img/noimage.jpg'/>" alt="자기소개페이지" title="개인프로젝트 포트폴리오">
+		        	<img class="img-responsive" src="<c:url value='/resources/bootstrap/kelvin/img/portfolio.png'/>" alt="자기소개페이지" title="개인프로젝트 포트폴리오">
 		        </div>
 		        <div class="info">
 		          <h3>홈페이지 이동하기</h3>
