@@ -15,7 +15,6 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 @SpringBootApplication
 @MapperScan(value = {"hs.intro.mapper"})
-
 public class IntroParkApplication extends SpringBootServletInitializer {
 
 	 @Override
@@ -29,21 +28,9 @@ public class IntroParkApplication extends SpringBootServletInitializer {
 		SpringApplication.run(IntroParkApplication.class, args);
 	}
 
-
-
-
-
-
 	 /**
      * SqlSessionFactory 설정
      */
-//    @Bean
-//    public SqlSessionFactory sqlSessionFactory(DataSource dataSource)throws Exception{
-//        SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-//            sessionFactory.setDataSource(dataSource);
-//            return sessionFactory.getObject();
-//    }
-
 	   @Bean
 	    public SqlSessionFactory sqlSessionFactory(DataSource dataSource)throws Exception{
 	        SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();

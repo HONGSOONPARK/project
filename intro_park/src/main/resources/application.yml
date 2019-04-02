@@ -4,18 +4,30 @@ spring:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
   datasource:
-#    Raspberry Pi
-    url: jdbc:mysql://192.168.219.111:3306/intro?serverTimezone=UTC&useUnicode=true&charaterEncoding=utf-8&useSSL=false
-    # Centos 7
-#    url: jdbc:mysql://116.45.90.231:3306/intro?serverTimezone=UTC&useUnicode=true&charaterEncoding=utf-8&useSSL=false
-    username: intro
-    password: intro123
+
+#    Raspberry Pi(외부접속IP)
+#    url: ENC(KyixcTG6P6Xqbvva4KY4cHxA19g9Jec4Ne8doAgNu3oQfQPT9d7AzCQ5USt2iLvUzElHHZaMeXxjMOWEj7HAO+lyNoivmmKQAEud3j+7YIjbz2bFFBJnNA7F9wDPdu96yy5Ma4sJGQ3F4GVDxLGzPtFpvLESqchq)
+
+#    Raspberry Pi(내부접속IP)
+#    url: ENC(UWA9wgK3LAXRa4CCku6gEFdCIDksh9TPubXpTE++ELy+4D3znU5Ev2Peui7Vc40xUPp/hNUSP81PJNh/CJlLUT0JZljcJRWqnRN8QT79TcJCpfKuhtIoviVLXG/1QqUtBZhZnVkPRHP3P4u7uLjouE8ORpvhDt/k)
+
+#    Centos7(내부접속IP)
+    url: ENC(BshfTxXPXUqDXGyxbz97uypmoN0ZB+Fl7WeW7JrY45XsC8gGWfEYL08hgsNCqXuPjSVrTxR11iADoyFuZFMH14aFJnTV41/yCcU4P3y1OZN62zY2ExLjx9jPskzxmSrY/xG5/y2m+32fvbrGXujZ7p5/+4cYvSeh)
+    
+    username: ENC(P8FxIq/nBrpD50wSQP73Bg==)
+    password: ENC(jKjBxEYAHxrlu0MDvUq+DdVXKYvxBYs0)
     driver-class-name: com.mysql.cj.jdbc.Driver
     
   jmx:
      enabled: false
-     default-domain: hongsoon.ga
-      
+     default-domain: ENC(n8rl4RLMonDvQsD2uRntzz4MiH9I3LEuW433yE3hjBA=)
+             
+jasypt:
+    encryptor:
+      bean: jasyptStringEncrptor
+
+
+
     
 #  jpa:
 #    properties:
