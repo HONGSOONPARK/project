@@ -1,26 +1,4 @@
-$.fn.serializeObject = function(){
-	    var o = {};
-	    var a = this.serializeArray();
-	    $.each(a, function() {
-	    	var name = $.trim(this.name),
-	    		value = $.trim(this.value);
-	    	
-	        if (o[name]) {
-	            if (!o[name].push) {
-	                o[name] = [o[name]];
-	            }
-	            o[name].push(value || '');
-	        } else {
-	            o[name] = value || '';
-	        }
-	    });
-	    return o;
-	};
-	
 jQuery(document).ready(function($) {
-	
-	
-	
   "use strict";
   
   //Contact
@@ -123,18 +101,13 @@ jQuery(document).ready(function($) {
     this_form.find('.sent-message').slideUp();
     this_form.find('.error-message').slideUp();
     this_form.find('.loading').slideDown();
-//    alert(JSON.stringify(str) + " // \n"+str);
-//    alert(JSON.stringify($(this).serializeObject()));
 	
-	// 추가한 row의 Data와 DB table의 Data를 비교하여 중보여부를 판단한다 
  	$.ajax({	
 		type: "POST",
         url: action,
 		dataType: "text",
 		data : JSON.stringify($(this).serializeObject()),
-//		data : $(this).serialize(),
 		contentType:"application/json;charset=UTF-8",
-//		contentType:"charset=UTF-8",
 		success : function(data, status, xhr) {
 	        if (data == 'OK') {
 	          this_form.find('.loading').slideUp();

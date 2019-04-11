@@ -173,7 +173,7 @@ SECTION WRAPS
 
 #headerwrap {
 /*   background: url(../img/header-bg.jpg) no-repeat center top; */
-  background: url(../img/header-park.jpg) no-repeat center top;
+  background: url(../../../back.jpg) no-repeat center top;
   margin-top: 60px;
   padding-top: 140px;
   text-align: center;
@@ -311,8 +311,10 @@ SECTION WRAPS
   background: #34495e;
 }
 
+/* <!-- 프로젝트 글씨 색깔 --> */
 .desc more {
-  color: #95a5a6;
+	color:#8A8A8A;
+/*   color: #95a5a6; */
 /* 	color: #5D5D5D; */
 /*   color: #81A5B4; */
 }
@@ -484,8 +486,12 @@ sm {
 #pr_p p {
   margin-bottom: 1px;
   font-size: 14px;
+  width: 300px;
 }
 
+#pr_p p more {
+	white-space:pre-line;
+}
 
 #portfolio .col-lg-6, .col-lg-3{
 	margin-top: 35px;
@@ -524,3 +530,48 @@ sm {
 	font-size: 13px;
 	
 }
+
+.frm_txt, .frm_btn{
+	color:black;
+}
+
+
+
+.portfolioDiv{
+	position:relative;
+	overflow:auto;
+	border: 1px solid #BDBDBD;
+	height: auto;	
+	padding: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+
+.portfolioDiv .portfolioText{
+	line-height: 22px;
+	font-size: 14px;
+}
+
+.portfolioDiv .pfBtn{
+  
+	border: none;
+	margin-right: 5px;
+	margin-top: 5px;
+	font-size: 16px;
+	font-weight: bolder;
+	
+}
+
+.w15{ width:15px; } .w20{ width:20px; } .w25{ width:25px; }  .w30{ width:25px; }  .w35{ width:35px; }  .w40{ width:40px; }  .w45{ width:45px; }  .w50{ width:50px; }  .w55{ width:55px; }  .w60{ width:60px; }  .w65{ width:65px; }  .w70{ width:70px; }  .w75{ width:75px; }  .w80{ width:80px; }   .w85{ width:85px; }  .w90{ width:90px; }  .w95{ width:95px; }  .w100{ width:100px; }
+.w105{ width:105px; }  .w110{ width:110px; }  .w115{ width:115px; }  .w120{ width:125px; }  .w125{ width:125px; }  .w130{ width:130px; }   .w135{ width:135px; }  .w140{ width:140px; }  .w145{ width:145px; }  .w150{ width:150px; }  .w155{ width:155px; }  .w160{ width:160px; }  .w165{ width:165px; }  .w170{ width:170px; }  .w175{ width:175px; }  .w180{ width:180px; }  .w185{ width:185px; }  .w190{ width:190px; }  .w195{ width:195px; }  .w200{ width:200px; }
+.w205{ width:205px; } .w210{ width:210px; } .w215{ width:215px; } .w220{ width:220px; }
+.w300{ width:300px; } .w305{ width:305px; } .w310{ width:310px; } .w315{ width:315px; } .w320{ width:320px; } .w325{ width:325px; } .w330{ width:330px; } .w335{ width:335px; } .w340{ width:340px; } .w345{ width:345px; } .w350{ width:350px; }
+.w515{ width:515px; }
+
+
+
+
+
+
+

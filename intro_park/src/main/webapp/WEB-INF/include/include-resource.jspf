@@ -1,0 +1,38 @@
+<%@ page pageEncoding="utf-8"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
+	<c:set var="contextPath" value="<%= request.getContextPath()%>"></c:set>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Contnt-Type" content="text/html; charset=UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- csrf -->
+	<meta id="_csrf" name="_csrf" content="${_csrf.token}"/>
+	<meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}"/>
+	<meta http-equiv="Subject" content="웹 개발자 포트폴리오" />
+	<meta http-equiv="Author" content="PARK HONG SOON" />
+	<meta name="Keywords" content="Web, html, 웹 표준, 웹 개발, 박홍순, hongsoon, 포트폴리오, portfolio, 취업, 웹 개발자 포트폴리오, 반응형웹, Spring, 전자정부프레임워크, bootstrap, jsp, jquery, css, 개발자 포트폴리오, 자기소개서, PARK HONG SOON" />
+
+
+  	<!-- Favicons -->
+  	<link href="<c:url value='/resources/bootstrap/kelvin/img/favicon.png'/>" rel="icon">
+  	<link href="<c:url value='/resources/bootstrap/kelvin/img/apple-touch-icon.png'/>" rel="apple-touch-icon">
+
+	<!-- Bootstrap CSS File -->
+	<link href="<c:url value='/resources/bootstrap/kelvin/lib/bootstrap/css/bootstrap.css'/>" rel="stylesheet">
+		
+	<!-- Libraries CSS Files -->
+	<link href="<c:url value='/resources/bootstrap/kelvin/lib/font-awesome/css/font-awesome.min.css'/>" rel="stylesheet">
+		
+	<!-- Main Stylesheet File -->
+	<link href="<c:url value='/resources/bootstrap/kelvin/css/style.css'/>" rel="stylesheet">
+	
+	<link href="<c:url value='/resources/bootstrap/kelvin/css/ihover.css'/>" rel="stylesheet">
+		
+	<!-- JavaScript Libraries -->
+	<script src="<c:url value='/resources/bootstrap/kelvin/js/jquery-2.1.3.min.js'/>"></script>
+	<script src="<c:url value='/resources/bootstrap/kelvin/lib/bootstrap/js/bootstrap.js'/>"></script>
+	<script src="<c:url value='/resources/bootstrap/kelvin/lib/php-mail-form/validate.js'/>"></script>
+	<script src="<c:url value='/resources/bootstrap/kelvin/lib/chart/chart.js'/>"></script>
+	<script src="<c:url value='/resources/bootstrap/kelvin/lib/easing/easing.min.js'/>"></script>
+	<!-- Template Main Javascript File -->
+	<script src="<c:url value='/resources/bootstrap/kelvin/js/main.js'/>"></script>

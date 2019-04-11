@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="hs.intro.mapper.AdminMapper">
+
+	<select id="portfolioList" resultType="hs.intro.admin.PortfolioVO">
+<!-- 		SELECT  -->
+<!-- 			NO   -->
+<!-- 			,CATEGORY  -->
+<!-- 			,CORP  -->
+<!-- 			,PROJECT_TITLE -->
+<!-- 			,PROJECT_INTRO -->
+<!-- 			,DATE_FORMAT(START_DATE,'%Y/%m/%d') AS START_DATE -->
+<!-- 			,DATE_FORMAT(END_DATE,'%Y/%m/%d') AS END_DATE -->
+<!-- 			,CONTENTS		 -->
+<!-- 			,RESULT    	 -->
+<!-- 			,USE_YN		 -->
+<!-- 			,DATE_FORMAT(REG_DATE,'%Y/%m/%d') AS REG_DATE -->
+<!-- 		FROM -->
+<!-- 			PORTFOLIO -->
+			SELECT 
+				 A.NO  
+				,A.CATEGORY 
+				,A.CORP 
+				,A.PROJECT_TITLE
+				,A.PROJECT_INTRO
+<!-- 				,DATE_FORMAT(A.START_DATE,'%Y/%m/%d') AS START_DATE -->
+<!-- 				,DATE_FORMAT(A.END_DATE,'%Y/%m/%d') AS END_DATE -->
+				,A.START_DATE
+				,A.END_DATE
+				,A.CONTENTS		
+				,A.RESULT    	
+				,A.USE_YN
+				,A.DEL_YN
+				,A.ETC1
+				,A.ETC2				
+				,A.LIST_ORDER
+				,DATE_FORMAT(A.REG_DATE,'%Y/%m/%d') AS REG_DATE
+			  ,B.FILE_NO
+			  ,B.REF_NO
+			  ,B.FILE_EXPLAIN
+			  ,B.FILE_STORED_NAME
+			FROM
+				PORTFOLIO A LEFT OUTER JOIN FILES B ON A.NO = B.REF_NO
+			WHERE 1=1
+				AND A.DEL_YN = 'N'
+			ORDER BY A.LIST_ORDER ASC
+	</select>
+	
+	
+	
+	<update id="portfolioUpdate" parameterType="hs.intro.admin.PortfolioVO">	
+		UPDATE 
+			PORTFOLIO 
+		SET 
+			CATEGORY = #{category}
+			,CORP = #{corp}
+			,PROJECT_TITLE = #{project_title}
+			,PROJECT_INTRO = #{project_intro}
+			,START_DATE = #{start_date}
+			,END_DATE = #{end_date}
+			,CONTENTS = #{contents}
+			,RESULT = #{result}
+			,LIST_ORDER = #{list_order}
+			,USE_YN = #{use_yn}
+			,DEL_YN = #{del_yn}
+			,ETC1 = #{etc1}
+			,ETC2 = #{etc2}
+			,REG_DATE = NOW() 
+		WHERE
+			NO = #{no}
+	</update>
+
+
+	
+
+	<update id="portfolioInsert" parameterType="hs.intro.admin.PortfolioVO">
+		INSERT INTO 
+			PORTFOLIO
+			(
+				NO
+				,CATEGORY
+				,CORP
+				,PROJECT_TITLE
+				,PROJECT_INTRO
+				,START_DATE
+				,END_DATE
+				,CONTENTS
+				,RESULT
+				,LIST_ORDER
+				,ETC1
+				,ETC2
+				,USE_YN
+				,DEL_YN
+				,REG_DATE
+			) 
+		VALUES
+			(	
+				(SELECT SEQ_NO FROM SEQ WHERE 1=1 AND SEQ_CODE = 'PORTFOLIO')
+				,#{category}
+				,#{corp}
+				,#{project_title}
+				,#{project_intro}
+				,#{start_date}
+				,#{end_date}
+				,#{contents}
+				,#{result}
+				,#{list_order}
+				,#{etc1}
+				,#{etc2}
+				,#{use_yn}
+				,#{del_yn}
+				,NOW()
+			)
+	</update>
+	
+	<update id="portfolioDelete" parameterType="hs.intro.admin.PortfolioVO">	
+		UPDATE 
+			PORTFOLIO 
+		SET 
+			DEL_YN = #{del_yn}
+		WHERE
+			NO = #{no}
+	</update>
+
+</mapper>
+
+

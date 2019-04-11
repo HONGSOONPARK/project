@@ -1,12 +1,10 @@
 package hs.intro.mapper;
 
-import java.util.List;
-
-import hs.intro.member.MemberVO;
+import hs.intro.security.MemberDetailVO;
 
 public interface MemberMapper {
 
-	public List<MemberVO> memberList(MemberVO member)throws Exception;
+	public MemberDetailVO memberList(String memberId) throws Exception;
 
 
 }

@@ -1,34 +1,32 @@
 package hs.intro.main;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import hs.intro.admin.PortfolioVO;
+import hs.intro.mapper.MainMapper;
 
 
 @Controller
 public class MainController {
 
-	@GetMapping("/")
-    public String main(Model model){
-        return "index";
+	@Autowired
+	MainMapper mainMapper;
+
+	@RequestMapping("/")
+    public ModelAndView main() throws Exception{
+		ModelAndView mv = new ModelAndView("/index");
+		List<PortfolioVO> list = mainMapper.portfolio();
+
+		mv.addObject("list", list);
+
+		return mv;
+
     }
-
-	@GetMapping("/adminLogin")
-    public String adminLogin(){
-        return "admin/adminLogin";
-    }
-
-	@GetMapping("/adminMain")
-    public String adminMain(){
-        return "admin/adminMain";
-    }
-
-	@GetMapping("/loginSuccess")
-    public String loginSuccess(Model model){
-        return "loginSuccess";
-    }
-
-
 }
 
 

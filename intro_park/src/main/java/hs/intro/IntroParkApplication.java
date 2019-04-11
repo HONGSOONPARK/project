@@ -8,13 +8,19 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
+import hs.intro.util.RouteProperties;
+
 @SpringBootApplication
 @MapperScan(value = {"hs.intro.mapper"})
+@EnableConfigurationProperties({
+    RouteProperties.class
+})
 public class IntroParkApplication extends SpringBootServletInitializer {
 
 	 @Override

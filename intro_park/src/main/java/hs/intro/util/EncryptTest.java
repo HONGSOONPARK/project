@@ -11,14 +11,15 @@ public class EncryptTest {
         StandardPBEStringEncryptor pbeEnc = new StandardPBEStringEncryptor();
         pbeEnc.setAlgorithm("PBEWithMD5AndDES");
         pbeEnc.setPassword("!hspark09#$");
+        String a = "jdbc:log4jdbc:mysql://192.168.219.10:3306/intro?serverTimezone=UTC&useUnicode=true&charaterEncoding=utf-8&useSSL=false";
+        String b = "jdbc:log4jdbc:mysql://192.168.219.111:3306/intro?serverTimezone=UTC&useUnicode=true&charaterEncoding=utf-8&useSSL=false";
+        String c = "jdbc:log4jdbc:mysql://116.45.90.231:3306/intro?serverTimezone=UTC&useUnicode=true&charaterEncoding=utf-8&useSSL=false";
 
-        String url = "bean";
-        String username = "bean123";
-        String password = "jdbc:mysql://192.168.219.10:3306/bean?serverTimezone=UTC";
+        System.out.println("test :: " + a + " | 변경 test :: " + pbeEnc.encrypt(a));
+        System.out.println("test :: " + b + " | 변경 test :: " + pbeEnc.encrypt(b));
+        System.out.println("test :: " + c + " | 변경 test :: " + pbeEnc.encrypt(c));
 
-        System.out.println("기존  URL :: " + url + " | 변경 URL :: " + pbeEnc.encrypt(url));
-        System.out.println("기존  username :: " + username + " | 변경 username :: " + pbeEnc.encrypt(username));
-        System.out.println("기존  password :: " + password + " | 변경 password :: " + pbeEnc.encrypt(password));
+
 
     }
 

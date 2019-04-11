@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+	<title>hongsoon</title>
+	<%@ include file="/WEB-INF/include/include-resource.jspf" %>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137183362-1"></script>
 	<script>
@@ -13,34 +16,9 @@
 	</script>
 		
 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta http-equiv="Contnt-Type" content="text/html; charset=UTF-8">
-	<meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<meta http-equiv="Subject" content="웹 개발자 포트폴리오" />
-	<meta http-equiv="Author" content="PARK HONG SOON" />
-	<meta name="Keywords" content="Web, html, 웹 표준, 웹 개발, 박홍순, hongsoon, 포트폴리오, portfolio, 취업, 웹 개발자 포트폴리오, 반응형웹, Spring, 전자정부프레임워크, bootstrap, jsp, jquery, css, 개발자 포트폴리오, 자기소개서, PARK HONG SOON" />
 
- <title>박홍순 자기소개</title>
- 
-  <!-- Favicons -->
-  <link href="<c:url value='/resources/bootstrap/kelvin/img/favicon.png'/>" rel="icon">
-  <link href="<c:url value='/resources/bootstrap/kelvin/img/apple-touch-icon.png'/>" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Raleway:400,300,700" rel="stylesheet">
-
-  <!-- Bootstrap CSS File -->
-  <link href="<c:url value='/resources/bootstrap/kelvin/lib/bootstrap/css/bootstrap.css'/>" rel="stylesheet">
-
-  <!-- Libraries CSS Files -->
-  <link href="<c:url value='/resources/bootstrap/kelvin/lib/font-awesome/css/font-awesome.min.css'/>" rel="stylesheet">
-
-  <!-- Main Stylesheet File -->
-  <link href="<c:url value='/resources/bootstrap/kelvin/css/style.css'/>" rel="stylesheet">
-  
-  <link href="<c:url value='/resources/bootstrap/kelvin/css/ihover.css'/>" rel="stylesheet">
 
   <!-- =======================================================
     Template Name: Kelvin
@@ -129,15 +107,6 @@
     </div>
   </div>
 
-  <!-- JavaScript Libraries -->
-  <script src="<c:url value='/resources/bootstrap/kelvin/js/jquery-2.1.3.min.js'/>"></script>
-  <script src="<c:url value='/resources/bootstrap/kelvin/lib/bootstrap/js/bootstrap.js'/>"></script>
-  <script src="<c:url value='/resources/bootstrap/kelvin/lib/php-mail-form/validate.js'/>"></script>
-  <script src="<c:url value='/resources/bootstrap/kelvin/lib/chart/chart.js'/>"></script>
-  <script src="<c:url value='/resources/bootstrap/kelvin/lib/easing/easing.min.js'/>"></script>
-
-  <!-- Template Main Javascript File -->
-  <script src="<c:url value='/resources/bootstrap/kelvin/js/main.js'/>"></script>
 
 </body>
 

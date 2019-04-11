@@ -5,13 +5,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="hs.intro.mapper.MemberMapper">
 
-	<select id="memberList" parameterType="hs.intro.member.MemberVO" resultType="hs.intro.member.MemberVO">
+	<select id="memberList" parameterType="String" resultType="hs.intro.security.MemberDetailVO">
 		SELECT A.MEMBER_NO,
 		       A.MEMBER_ID,
+		       A.MEMBER_PWD,
 		       A.MEMBER_NICK,
 		       A.MEMBER_ROLE
 		  FROM MEMBER_INFO A JOIN MEMBER_INFO_DETAIL B ON A.MEMBER_NO = B.MEMBER_NO
-		 WHERE A.MEMBER_ID = #{member_id};
+		 WHERE A.MEMBER_ID = #{memberId};
 	</select>
 
 </mapper>

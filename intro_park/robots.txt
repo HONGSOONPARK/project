@@ -1,0 +1,11 @@
+User-agent: Googlebot
+Disallow: /mng/adminLogin
+Disallow: /resources/
+
+
+User-agent: Yeti
+Disallow: /mng/adminLogin
+Disallow: /resources/
+
+User-agent: *
+Disallow: /

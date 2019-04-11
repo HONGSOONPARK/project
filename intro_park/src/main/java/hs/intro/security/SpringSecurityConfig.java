@@ -23,10 +23,13 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter  {
 	  	@Autowired
 	    AuthProvider authProvider;
 
+		@Autowired
+		MemberDetailService memberDetailService;
+
 	    @Override
 	    public void configure(WebSecurity web) throws Exception {
 	        // 허용되어야 할 경로들
-	        web.ignoring().antMatchers("/resources/**");
+	        web.ignoring().antMatchers("/resources/**","/uploads/**");
 	    }
 
 	    @Override
@@ -34,15 +37,15 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter  {
 	        // 로그인 설정
 	        http.authorizeRequests()
 	            // ROLE_USER, ROLE_ADMIN으로 권한 분리 유알엘 정의
-	            .antMatchers("/").permitAll()
-	            .antMatchers("/adminLogin").permitAll()
-	            .antMatchers("/adminMain").access("A")
-//	            .antMatchers("/**").authenticated()
+	            .antMatchers("/*").permitAll()
+	            .antMatchers("/mng/adminLogin").permitAll()
+	            .antMatchers("/mng/*").access("A")
+	            .antMatchers("/mng/*").authenticated()
 	        .and()
 	            // 로그인 페이지 및 성공 url, handler 그리고 로그인 시 사용되는 id, password 파라미터 정의
 	            .formLogin()
-	            .loginPage("/adminLogin")
-	            .defaultSuccessUrl("/adminMain")
+	            .loginPage("/mng/adminLogin")
+	            .defaultSuccessUrl("/mng/adminMain")
 //	            .failureHandler(authFailureHandler)
 //	            .successHandler(authSuccessHandler)
 	            .usernameParameter("id")
@@ -50,15 +53,16 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter  {
 	        .and()
 	            // 로그아웃 관련 설정
 	            .logout().logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
-	            .logoutSuccessUrl("/")
+	            .logoutSuccessUrl("/mng/adminLogin")
 	            .invalidateHttpSession(true)
 	        .and()
 	            // csrf 사용유무 설정
 	            // csrf 설정을 사용하면 모든 request에 csrf 값을 함께 전달해야한다.
-	            .csrf().disable()
-//	        .and()
+	            .csrf()
+	        .and()
 	            // 로그인 프로세스가 진행될 provider
 	            .authenticationProvider(authProvider)
+	            .userDetailsService(memberDetailService)
 	            .headers()
                     .addHeaderWriter(new StaticHeadersWriter("X-Content-Security-Policy","script-src 'self'"))
                     .frameOptions().disable();

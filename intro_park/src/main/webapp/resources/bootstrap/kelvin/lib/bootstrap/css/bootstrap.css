@@ -1601,6 +1601,7 @@ pre code {
   .container {
     width: 1170px;
   }
+  
 }
 .container-fluid {
   padding-right: 15px;
@@ -5970,9 +5971,10 @@ button.close {
 }
 @media (min-width: 768px) {
   .modal-dialog {
-    width: 600px;
+    width: 835px;
     margin: 30px auto;
   }
+  
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
             box-shadow: 0 5px 15px rgba(0, 0, 0, .5);

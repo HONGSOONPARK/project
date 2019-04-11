@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="hs.intro.mapper.MainMapper">
+
+	<select id="portfolio"  resultType="hs.intro.admin.PortfolioVO">
+			SELECT 
+				 A.NO  
+				,A.CATEGORY 
+				,A.CORP 
+				,A.PROJECT_TITLE
+				,A.PROJECT_INTRO
+				,A.START_DATE
+				,A.END_DATE
+				,A.CONTENTS
+				,A.ETC1
+				,A.ETC2		
+				,A.RESULT    	
+				,A.USE_YN
+				,A.DEL_YN	
+				,A.LIST_ORDER
+			  	,B.FILE_NO
+			  	,B.REF_NO
+			  	,B.FILE_EXPLAIN
+			  	,B.FILE_STORED_NAME
+			FROM
+				PORTFOLIO A LEFT OUTER JOIN FILES B ON A.NO = B.REF_NO
+			WHERE 1=1
+				AND A.DEL_YN = 'N'
+				AND A.USE_YN = 'Y'
+			ORDER BY A.LIST_ORDER ASC
+	</select>
+
+</mapper>
+
+

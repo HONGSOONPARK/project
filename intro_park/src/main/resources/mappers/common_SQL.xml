@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="hs.intro.mapper.CommonMapper">
+	
+	<update id="fileUpdate" parameterType="hs.intro.common.FileVO">	
+		UPDATE 
+			FILES 
+		SET 
+			FILE_EXPLAIN = #{file_explain}      
+			,FILE_ORIGINAL_NAME = #{file_original_name}
+			,FILE_STORED_NAME = #{file_stored_name}  
+			,FILE_EXTENSION = #{file_extension}    
+			,FILE_SIZE = #{file_size}         
+			,ETC1 = #{etc1}              
+			,ETC2 = #{etc2}              
+			,DEL_YN = #{del_yn}            
+			,REG_DATE = NOW() 
+		WHERE
+			REF_NO = #{ref_no}
+	</update>
+
+	<update id="fileInsert" parameterType="hs.intro.common.FileVO">
+		INSERT INTO 
+		FILES
+		(	FILE_NO
+			,REF_NO
+			,FILE_EXPLAIN
+			,FILE_ORIGINAL_NAME
+			,FILE_STORED_NAME
+			,FILE_EXTENSION
+			,FILE_SIZE
+			,ETC1
+			,ETC2
+			,DEL_YN
+			,REG_DATE
+		)
+		VALUES
+		(
+			(SELECT SEQ_NO FROM SEQ WHERE 1=1 AND SEQ_CODE = 'FILES')
+			,#{ref_no}
+			,#{file_explain}
+			,#{file_original_name}
+			,#{file_stored_name}
+			,#{file_extension}
+			,#{file_size}
+			,#{etc1}
+			,#{etc2}
+			,#{del_yn}
+			,NOW()
+		)
+	</update>
+	
+	<update id="fileDelete" parameterType="hs.intro.common.FileVO">	
+		UPDATE 
+			FILES 
+		SET 
+			DEL_YN = #{del_yn}            
+		WHERE
+			FILE_NO = #{file_no}
+	</update>
+	
+	<!-- UPDATE SEQ -->
+    <update id="updateSeq" parameterType="hashmap">
+      	<![CDATA[
+			UPDATE
+				SEQ 
+			SET 
+				SEQ_NO = SEQ_NO + 1 
+			WHERE 
+				SEQ_CODE = #{seq_code}
+   		]]>
+    </update>	
+    
+	<!-- SELECT SEQ-->
+      <select id="selectSeq" parameterType="hashmap" resultType="java.lang.Integer">
+      	<![CDATA[
+			SELECT
+		 		SEQ_NO
+			FROM SEQ
+			WHERE 1=1 
+        	AND SEQ_CODE = #{seq_code}
+   		]]>
+    </select>	
+
+</mapper>
+
+
