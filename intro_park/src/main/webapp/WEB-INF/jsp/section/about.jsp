@@ -1,120 +1,62 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-  <section id="about" name="about">
-    <div id="intro">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-2 col-lg-offset-1">
-            <h5>소개합니다.</h5>
-          </div>
-          <div id="int" class="col-lg-6">
-<!-- 			<div id="intro"> -->
-
-<!-- 				<p><strong>"적극, 신뢰, 탐구적인 자세를 갖춘 개발자 "</strong></p> -->
-<!-- 				<p>적극적인 사람이 되고자 다양한 활동을 시작했습니다. 학부생 시절, 부학생회장에 선출되어 학내외 행사를 성공적으로 이끈 경험이 있습니다. 이후 웹 프로젝트를 기획하며 학술제에 입상하여 동상을 받기도 했습니다. 이를 통해 적극적이고 주도적인 자세는 다양한 경험과 성장의 발판이 된다는 것을 깨달았습니다. </p> -->
-<!-- 				<p>이후 ‘신뢰할 수 있는 사람이 되자’는 목표가 생겼습니다. 주변에서 인정과 신뢰를 받음으로써 좋은 관계를 유지 할 수 있었고, 그에 보답하고자 자연스럽게 성실하고 책임감을 갖춘 사람이 될 수 있었습니다.</p> -->
-<!-- 				<p>앞으로는 개발자로 성장하기 위해 자만하지 않고 탐구 습관을 지닐 것입니다. 개발지식을 내 것으로 만들며, 새로운 기술을 끊임없이 탐구하는 모습이야말로 성장하는 개발자의 참된 모습이라고 생각합니다. 이를 실천하기 위해 github을 주로 애용하여 테스트 프로그램 작성하며 개발자로서 성장을 다지고 있습니다.</p> -->
-				
-<!-- 				<p><strong>"적극, 신뢰, 탐구적인 자세를 갖춘 개발자 "</strong></p> -->
-				<p>안녕하세요. 박홍순 입니다. 저의 홈페이지에 방문해주셔서 감사합니다. </p>
-				<p>2년차 개발자로서 현재 퇴사(16.03 ~ 18.03) 후 취업 활동 중입니다.</p>
-				
-				<p>이 홈페이지를 비롯해 개인 프로젝트를 진행하며 역량을 쌓기 위해 노력하고 있습니다. </p>
-				<p>더 나은 기술, 사용자 중심의 웹 페이지를 위해 항상 고민하는 개발자입니다. </p>
-				
-				<p>천천히 둘러봐주세요 ^^. 감사합니다.</p>
-				
-				
-<!-- 			</div> -->
-          </div>
-            <p><a href="#"><i class="icon-file"></i></a>
-              <sm><a href="#introduce" class="" data-toggle="modal">자기소개서 열람</a>  &nbsp;<span class="glyphicon glyphicon-search"></span></sm>
-            </p>
-          </div>
-          
-          <!-- Modal -->
-           <div id="introduce" class="modal">
-		     <div class="modal-dialog">
-		          <div class="modal-content">
-		               <div class="modal-header">
-		                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		                    <h4 class="modal-title">자기소개서<a href="<c:url value='/resources/박홍순_자기소개서.pdf'/> "><small>( pdf&nbsp;<span class="glyphicon glyphicon-floppy-disk"></span> )</small></a></h4>
-		               </div>
-
-					<div class="modal-body">
-							<p><span> > 나를 표현한다면?</span></p>
-		               		<p><strong>"적극, 신뢰, 탐구적인 자세를 갖춘 개발자 "</strong></p>
-		                    <p><cr>적극</cr>적인 사람이 되고자 다양한 활동을 시작했습니다. 학부생 시절, 부학생회장에 선출되어 학내외 행사를 성공적으로 이끈 경험이 있습니다. 이후 웹 프로젝트를 기획하며 학술제에 입상하여 동상을 받기도 했습니다. 이를 통해 적극적이고 주도적인 자세는 다양한 경험과 성장의 발판이 된다는 것을 깨달았습니다. </p>
-		                    <p>이후 ‘<cr>신뢰</cr>할 수 있는 사람이 되자’는 목표가 생겼습니다. 주변에서 인정과 신뢰를 받음으로써 좋은 관계를 유지 할 수 있었고, 그에 보답하고자 자연스럽게 성실하고 책임감을 갖춘 사람이 될 수 있었습니다.</p>
-		                    <p>앞으로는 개발자로 성장하기 위해 자만하지 않고 <cr>탐구</cr> 습관을 지닐 것입니다. 개발지식을 내 것으로 만들며, 새로운 기술을 끊임없이 탐구하는 모습이야말로 성장하는 개발자의 참된 모습이라고 생각하기 때문입니다. 이를 실천하기 테스트 프로그램 작성, github, 커뮤니티 이용을 꾸준히 하고있습니다.  </p>
-		                    
-		                    <hr/>
-		                    
-		                    <p><span> > 웹 개발자가 되고 싶은 이유</span></p>
-		                    <p><strong>"탐구와 열정"</strong></p>
-		                    <p>컴퓨터 정보공학과에 진학하며 팀 프로젝트를 통해 '자전거를 활용한 다이어트' 웹 애플리케이션을 만들게 되었습니다. 이 과정에서 시스템을 구축하고, 사용자들에게 서비스 제공하는 과정이 매우 흥미로웠고, 성취감을 느낄 수 있었습니다. 사용자 중심의 서비스를 만들어내며, 보다 효율적으로 보완하는 과정이 저에게 열정과 흥미를 갖게 합니다. 
-
-							<p><strong>"개발자로서의 기초 역량과 소통능력"</strong></p>
-		                    <p>웹 개발자가 되기 위해 체계적이고 전문적인 교육을 받았습니다. 방송 국제교육원에서 진행하는 정보시스템 개발과정을 이수하였습니다. 이를 바탕으로 2년간 기업의 ERP 및 홈페이지 관리, SI 프로젝트 지원을 통해 기초를 쌓았습니다. 이러한 경험을 통해 직무를 수행하기 위한 지식과 역량을 갖추는 데 도움이 되었습니다. </p>
-		                    
-		                    <hr/>
-
-
-		                    <hr/>
-		                    <p><span> > 역량을 키우기 위해 노력한점</span></p>
-		                    <p><strong>"적극적인 인재로 성장하기 위해"</strong></p>
-							<p>IT 개발 직무의 중요 역량은 적극성이라고 생각합니다. 적극적 자세로 역량을 향상하며 맡은 업무를 수행하며 시스템의 안정성 유지, 효율적인 개발, 나아가 사업의 성공까지 이룰 수 있습니다. 적극성이 없다면 더 이상의 성장은 없다고 생각합니다.</p>
-							<p>저는 적극적인 자세를 키우기 위해 학부생 시절에는 학생회 활동을 지원했습니다. 부학생회장에 선출되어 적극적으로 교내 봉사활동, 학과 행사를 성공적으로 이끈 경험이 있습니다.</p>
-												
-							<p>전 직장에서도 적극적으로 업무에 참여하며 역량을 키웠습니다. 당시 ERP를 담당하고 있었습니다. 사용자들은 한 건의 결재를 위해서 두 번의 작업을 진행해야 했습니다. 사용자들은 불편을 느끼며 호소했지만, 정작 임원진, 팀장님은 그 문제를 심각하게 생각하지 않았습니다.</p>
-							<p>자투리 시간에 불필요한 소스를 찾아 정리하였습니다. 이를 바탕으로 필요한 시간과 작업량에 대해 정리하였고 적극적으로 개선 의지를 나타냈습니다.</p>
-							<p>정보를 검토한 팀장님은 작업의 양이 적다는 것을 인식했고, 수정 요청이 받아들여지게 되었습니다. 이후 개편을 통해 많은 사용자가 만족하였습니다. 더불어 저에 대한 신뢰도가 향상되었습니다.</p>
-							
-							<p>이처럼 적극적인 행동을 보여 개발자로서 역량을 향상 할 수 있었습니다.</p>
-
-
-
-
-							<hr/>
-		                    <p><span> > 나의 강점과 약점</span></p>
-		                    <p><strong>"간단한 정리, 효율성을 높이다"</strong></p>
-		                    <p>저는 틈틈이 메모하며 정리하고 복습하는 습관을 갖고 있습니다. 이 습관으로 인해 한번 경험했던 것들에 대해 더욱 빠른 해결이 가능하며 남다른 정보력을 가진 것이 강점입니다. </p>
-		                    <p>업무 시엔 업무 내용, 지시사항, 참고할만한 기술 등 그날 있었던 일들을 시간이 날 때마다 정리합니다.매일 귀찮을 수도 있지만 쌓여가는 정보의 양을 보면 성취감을 느낍니다.</p>
-		                    <p>이 강점을 향후 SW 개발을 하며 목표를 달성하는 데 활용하겠습니다. 업무현장에서 발생한 경험을 일목요연하게 정리하여 활용한다면 시스템 유지보수 및 관리할 때에 많은 도움이 될 것입니다. 또한, 신규 시스템 개발 시 기존 정보를 활용하며 더욱 빠르고 효율적인 개발이 가능할 것입니다. 그로 인해 시간을 단축한다면 진행 중인 사업의 성공에 한 걸음 더 다가갈 수 있을 것입니다.</p>
-		                    <p>단점으로는 빠른 의사결정의 부재입니다. 최선의 결과를 위해 다양한 생각에 빠지다 보니 빠른 결정에 문제가 생길 때가 있기 때문입니다. 이 점을 극복하기 위해 혼자만의 생각에 빠지지 않으려고 주의합니다. 주변의 의견을 물어보며 수렴하고, 최고의 선택을 하기 위해 활용합니다. 또한, 항상 적극적인 의사 표현과 능동적이고 행동력 있는 자세를 지향하려 노력 중입니다.</p>
-		                    
-
-		         			<hr/>
-		                    <p><span> > 앞으로 10년을 바라보며</span></p>
-		                    <p><strong>"정보력을 갖춘 개발자로서 도약"</strong></p>
-		                    <p>저는 향후 개발자로서 블로그나 개인홈페이지를 운영하며 다른 사람들이 참조할 수 있는 정보를 제공하는 것이 목표입니다. 정보를 제공하기 위해 확실하게 제 것으로 만드는 능력을 키울 수 있습니다. 또한, 다양한 사람들과 함께 고민하며 의견을 나누며 역량을 키울 수 있기 때문입니다.</p>
-		                    <p>이 목표를 달성하기 위해서는 크게 두 가지 과정을 꾸준히 실천할 것입니다.</p>
-		                    <p>첫째. 자만하지 않고 탐구하는 습관을 지닐것입니다.
-  프로그래밍에 필요한 기술은 다양합니다. 안정적이고 효율적인 방법을 탐구하며 현 상황에 맞는 최적의 기술을 찾아 활용할 줄 알아야 합니다. 기존의 내용을 자신의 것으로 만들며, 새로운 기술을 끊임없이 탐구하는 모습이야말로 성장하는 개발자의 모습이라고 생각합니다.</p>
-		                    <p>둘째. 개발자로서 글로벌 마인드를 갖추고 영어공부를 꾸준히 할 것입니다.
-개발시 다양한 검색엔진을 활용하여 많은 도움을 받곤 합니다. 영문으로된 documents 정보들을 활용한다면 더 많은 정보를 얻을 수 있기 때문입니다..</p>
-		                    <p>현재는 이 목표를 이루기 위한 첫단계로서  GITHUB의 사용법과 활용법을 공부하며 이용하고 있습니다. </p>
-		                               
-		               </div>
-		               
-		               <div class="modal-footer">
-		                    <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-<!-- 		                    <button type="button" class="btn btn-primary">자기소개서 받기<small>(PDF)</small></button> -->
-		               </div>
-		          </div>
-		     </div>
+<section id="about" name="about">
+<div id="intro">
+	<div class="container">
+		<div class="row">
+		
+			<div class="col-lg-2 col-lg-offset-1">
+				<h5>${aboutvo.getCategory() }</h5>
 			</div>
-          <!-- Modal -->
-          
-          
-        </div>
-        <!--/.row -->
-      </div>
-      <!--/.container -->
-    <!--/ #intro -->
-  </section>
+			<div id="int" class="col-lg-6">
+				<p>${aboutvo.getIntroduce() }</p>
+			</div>
+			
+			<p><a href="#"><i class="icon-file"></i></a>
+				<sm><a href="#introduce" class="" data-toggle="modal">자기소개서 열람</a>  &nbsp;<span class="glyphicon glyphicon-search"></span></sm>
+			</p>
+		</div>
+		
+		<!-- 자기소개 모달 -->
+		<div id="introduce" class="modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">자기소개서<a href="<c:url value='/resources/박홍순_자기소개서.pdf'/> "><small>( pdf&nbsp;<span class="glyphicon glyphicon-floppy-disk"></span> )</small></a></h4>
+					</div>
+					
+					<div class="modal-body">
+						<c:choose>
+							<c:when test="${fn:length(introducevo) > 0 }">
+								<c:forEach var="list" items="${introducevo }" varStatus="status">
+									<p><span> > ${list.getTitle() } </span></p>
+									<p><strong>"${list.getSub_title() }"</strong></p>
+						  		<p>${list.getIntroduce() }</p>
+						  		<hr/>
+								</c:forEach>
+							</c:when>
+							<c:otherwise>
+							<div align="center">
+								<h3>등록된 자기소개가 없습니다.</h3>
+							</div>
+							</c:otherwise>
+						</c:choose>
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 자기소개 모달 -->
+		
+		
+	</div>
+</div>
+
+</section>
 
 
  

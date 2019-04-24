@@ -14,6 +14,7 @@ spring:
       max-file-size: 10MB
       max-request-size: 10MB
       enabled: true
+  
       
       
 # mail stmp
@@ -39,9 +40,9 @@ spring:
   datasource:
 #    Centos7(내부접속IP)
 #    url: ENC(BshfTxXPXUqDXGyxbz97uypmoN0ZB+Fl7WeW7JrY45XsC8gGWfEYL08hgsNCqXuPjSVrTxR11iADoyFuZFMH14aFJnTV41/yCcU4P3y1OZN62zY2ExLjx9jPskzxmSrY/xG5/y2m+32fvbrGXujZ7p5/+4cYvSeh)
-    url: jdbc:log4jdbc:mysql://192.168.219.10:3306/intro?serverTimezone=UTC&useUnicode=true&charaterEncoding=utf-8&useSSL=false
+    url: ENC(5KzhYOEr3Rhy8BMjEA7TQws5iYy9qmY23yKwE625WuJZg3fN8knr7vvANEDGa7ZMM6rm27dQpa5ZykF51kJyZe2xoDeTv+Ob9hNKZu4GX2qArcjt0UozVdU5I0fckUHOjI6mjAltlK9FrRKVnzW9HPnIeu5RnrqtxsRpIyk+eJU=)
     username: ENC(P8FxIq/nBrpD50wSQP73Bg==)
-    password: ENC(jKjBxEYAHxrlu0MDvUq+DdVXKYvxBYs0)
+    password: ENC(NOjGXi/4d0PmeIzPwbVhqTqxoabw2oG2)
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
     dbcp2:
       validation-query: select 1
@@ -60,7 +61,7 @@ spring:
 #    Raspberry Pi(외부접속IP)
     url: ENC(K2qWuXu3E68sya/e5wWEDADYzaQYb0OCPVPd0kzJ49BXS1PnDsjBaF9Bh1R843p5Z9yhgSCEr07+qNOX3Af/mIBF7/s4n+pbDduFbjvrqZzyp6284x/yCIGadHxGzNdN9AbAigcR2SuzvEveXJdYEUDaLO0GTkIRzCzimy9oYUg=)
     username: ENC(P8FxIq/nBrpD50wSQP73Bg==)
-    password: ENC(jKjBxEYAHxrlu0MDvUq+DdVXKYvxBYs0)
+    password: ENC(+5uluqIoiyQrtt0feql8n3GZafckmvTu)
 #    driver-class-name: com.mysql.cj.jdbc.Driver
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
     dbcp2:
@@ -75,8 +76,6 @@ spring:
 #    Raspberry Pi(내부접속IP)
 #    url: ENC(YIe4/EMasYSltTrimDC1lzu6n+S4x8y/xQFQXnYNnsnsbXkCsUWhnhAKVpe7qLyKlDQYobaCm141SsKSTwc6cEt8ioxWmLJRaDxXFQH1WqpjjhnlkWEJx2ari4B9CmSR17sJ4DeaHNpunOt+yEuKJR0/Ctlpz1/tOBtU7W4Pr1A=)
   
-
-
 
 #  jpa:
 #    properties:

@@ -41,7 +41,11 @@ public class AdminController {
 
 		ModelAndView mv = new ModelAndView("mng/adminMain");
 		List<PortfolioVO> pfvo = adminMapper.portfolioList();
+		List<IntroduceVO> introducevo = adminMapper.introduceList();
+		AboutVO aboutvo = adminMapper.aboutList();
 		mv.addObject("pfvo", pfvo);
+		mv.addObject("aboutvo", aboutvo);
+		mv.addObject("introducevo", introducevo);
 		return mv;
     }
 
@@ -69,6 +73,40 @@ public class AdminController {
 		return "success";
     }
 
+
+	// 간략소개 저장버튼
+	@PostMapping("/mng/aboutSave")
+    public ModelAndView aboutSave(AboutVO aboutvo) throws Exception{
+		ModelAndView mv = new ModelAndView("redirect:/mng/adminMain");
+		adminService.aboutUpdate(aboutvo);
+		return mv;
+    }
+
+
+	// 포트폴리오 저장버튼
+	@PostMapping("/mng/introduceSave")
+    public ModelAndView introduceSave(IntroduceVO introducevo) throws Exception{
+		ModelAndView mv = new ModelAndView("redirect:/mng/adminMain");
+
+		adminService.introduceUpdate(introducevo);
+		return mv;
+    }
+
+	// 포트폴리오 추가버튼
+	@PostMapping("/mng/introduceInsert")
+    public ModelAndView introduceInsert(IntroduceVO introducevo) throws Exception{
+		ModelAndView mv = new ModelAndView("redirect:/mng/adminMain");
+		adminService.introduceInsert(introducevo);
+		return mv;
+    }
+
+	// 포트폴리오 삭제버튼
+	@RequestMapping("/mng/introduceDel")
+	@ResponseBody
+    public String introduceDelete(@RequestBody IntroduceVO introducevo) throws Exception{
+		adminService.introduceDelete(introducevo);
+		return "success";
+    }
 
 }
 

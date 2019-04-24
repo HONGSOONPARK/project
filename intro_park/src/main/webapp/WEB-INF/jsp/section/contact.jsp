@@ -15,7 +15,7 @@
               <t>Email</t><br/> phs39@naver.com <br/>
             </p>
             <p>
-              <t>Adress</t><br/> 충청북도 <br/> 청주시 흥덕구 가경동 <br/>
+              <t>Address</t><br/> 충청북도 <br/> 청주시 흥덕구 가경동 <br/>
             </p>
             <p>
               <t>Phone</t><br/> +82 10-4123-2517 <br/>

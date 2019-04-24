@@ -56,6 +56,8 @@ public class AdminService
 		}
 	}
 
+
+	// 포트폴리오 업데이트
 	public void portfolioUpdate(PortfolioVO portfoliovo, MultipartFile[] files) throws Exception{
 
 		List<FileVO> fileList = fileService.fileStore(files);
@@ -77,8 +79,6 @@ public class AdminService
 
 		// 데이터 업데이트
 		adminMapper.portfolioUpdate(portfoliovo);
-
-
 	}
 
 	// 포트폴리오 삭제
@@ -91,6 +91,41 @@ public class AdminService
 		// 데이터 업데이트
 		fileService.fileDelete(filevo);
 	}
+
+	public void aboutUpdate(AboutVO aboutvo) throws Exception{
+		// 데이터 업데이트
+		adminMapper.aboutUpdate(aboutvo);
+	}
+
+
+	// 자기소개서 추가
+	public void introduceInsert(IntroduceVO introducevo) throws Exception{
+
+		// seq 업데이트
+		commonMapper.updateSeq("INTRODUCE");
+		// 데이터 삽입
+		adminMapper.introduceInsert(introducevo);
+
+	}
+
+
+	// 자기소개서 업데이트
+	public void introduceUpdate(IntroduceVO introducevo) throws Exception{
+
+		// seq 업데이트
+//		commonMapper.updateSeq("INTRODUCE");
+		// 데이터 업데이트
+		adminMapper.introduceUpdate(introducevo);
+	}
+
+	// 자기소개서 삭제
+	public void introduceDelete(IntroduceVO introducevo) throws Exception{
+		// del_yn = 'Y' 변경
+		adminMapper.introduceDelete(introducevo);
+	}
+
+
+
 
 
 }

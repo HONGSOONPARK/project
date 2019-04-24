@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import hs.intro.admin.AboutVO;
+import hs.intro.admin.IntroduceVO;
 import hs.intro.admin.PortfolioVO;
 import hs.intro.mapper.MainMapper;
 
@@ -21,8 +23,12 @@ public class MainController {
     public ModelAndView main() throws Exception{
 		ModelAndView mv = new ModelAndView("/index");
 		List<PortfolioVO> list = mainMapper.portfolio();
+		List<IntroduceVO> introducevo = mainMapper.introduce();
+		AboutVO aboutvo = mainMapper.about();
 
 		mv.addObject("list", list);
+		mv.addObject("aboutvo", aboutvo);
+		mv.addObject("introducevo", introducevo);
 
 		return mv;
 

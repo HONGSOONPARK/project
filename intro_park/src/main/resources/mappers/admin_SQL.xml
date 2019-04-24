@@ -122,7 +122,90 @@
 		WHERE
 			NO = #{no}
 	</update>
+	
 
+
+	<select id="aboutList" resultType="hs.intro.admin.AboutVO">
+		SELECT 
+			A.NO,
+			A.CATEGORY,
+			A.INTRODUCE
+		FROM
+			ABOUT A
+	</select>
+	
+	<update id="aboutUpdate" parameterType="hs.intro.admin.AboutVO">	
+		UPDATE 
+			ABOUT 
+		SET 
+			CATEGORY = #{category}
+			,INTRODUCE = #{introduce}
+		WHERE
+			NO = #{no}
+	</update>
+	
+	<select id="introduceList" resultType="hs.intro.admin.IntroduceVO">
+		SELECT
+			A.NO,
+			A.TITLE, 
+			A.SUB_TITLE, 
+			A.INTRODUCE, 
+			A.USE_YN, 
+			A.LIST_ORDER
+		FROM INTRODUCE A
+		WHERE 1=1
+				AND A.DEL_YN = 'N'
+		ORDER BY A.LIST_ORDER ASC
+	</select>	
+
+	<update id="introduceInsert" parameterType="hs.intro.admin.IntroduceVO">	
+		INSERT INTO 
+			INTRODUCE
+			(
+				NO
+				,TITLE
+				,SUB_TITLE
+				,INTRODUCE
+				,USE_YN
+				,DEL_YN
+				,LIST_ORDER
+				,REG_DATE
+			) 
+		VALUES
+			(	
+				(SELECT SEQ_NO FROM SEQ WHERE 1=1 AND SEQ_CODE = 'INTRODUCE')
+				,#{title}
+				,#{sub_title}
+				,#{introduce}
+				,#{use_yn}
+				,#{del_yn}
+				,#{list_order}
+				,NOW()
+			)
+	</update>	
+	
+	
+	<update id="introduceUpdate" parameterType="hs.intro.admin.IntroduceVO">	
+		UPDATE 
+			INTRODUCE 
+		SET 
+			TITLE = #{title}
+			,SUB_TITLE = #{sub_title}
+			,INTRODUCE = #{introduce}
+			,USE_YN = #{use_yn}
+			,LIST_ORDER = #{list_order}
+		WHERE
+			NO = #{no}
+	</update>
+	
+	<update id="introduceDelete" parameterType="hs.intro.admin.IntroduceVO">	
+		UPDATE 
+			INTRODUCE 
+		SET 
+			DEL_YN = #{del_yn}
+		WHERE
+			NO = #{no}
+	</update>
 </mapper>
 
 

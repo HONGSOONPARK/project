@@ -6,8 +6,8 @@
 
 	<c:if test="${status.count ne null }">
 		<div align="right" class="">
-			<button type="button" class="pfBtn" id="pfSaveBtn_${status.count - 1}" onclick="pfSaveBtn(this);" value="<c:url value='/mng/pfSave'/>" >저장&nbsp;<span class="glyphicon glyphicon-floppy-disk"></button>
-			<button type="button" class="pfBtn" id="pfDelBtn_${status.count - 1}" onclick="pfDelBtn(this);" value="<c:url value='/mng/pfDel'/>" >삭제&nbsp;<span class="glyphicon glyphicon-remove-sign"></button>
+			<button type="button" class="adminSaveBtn" id="pfSaveBtn_${status.count - 1}" onclick="pfSaveBtn(this);" value="<c:url value='/mng/pfSave'/>" >저장&nbsp;<span class="glyphicon glyphicon-floppy-disk"></span></button>
+			<button type="button" class="adminSaveBtn" id="pfDelBtn_${status.count - 1}" onclick="pfDelBtn(this);" value="<c:url value='/mng/pfDel'/>" >삭제&nbsp;<span class="glyphicon glyphicon-remove-sign"></span></button>
 		</div>
 	</c:if>
 	

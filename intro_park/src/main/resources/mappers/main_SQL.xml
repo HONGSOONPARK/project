@@ -33,6 +33,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			ORDER BY A.LIST_ORDER ASC
 	</select>
 
+	<select id="about" resultType="hs.intro.admin.AboutVO">
+		SELECT 
+			A.CATEGORY,
+			A.INTRODUCE
+		FROM
+			ABOUT A
+	</select>
+
+	<select id="introduce" resultType="hs.intro.admin.IntroduceVO">
+		SELECT
+			A.NO,
+			A.TITLE, 
+			A.SUB_TITLE, 
+			A.INTRODUCE, 
+			A.LIST_ORDER
+		FROM INTRODUCE A
+		WHERE 1=1
+			AND A.DEL_YN = 'N'
+			AND A.USE_YN = 'Y'
+		ORDER BY A.LIST_ORDER ASC
+	</select>
 </mapper>
 
 

@@ -11,11 +11,12 @@ public class EncryptTest {
         StandardPBEStringEncryptor pbeEnc = new StandardPBEStringEncryptor();
         pbeEnc.setAlgorithm("PBEWithMD5AndDES");
         pbeEnc.setPassword("!hspark09#$");
-        String a = "jdbc:log4jdbc:mysql://192.168.219.10:3306/intro?serverTimezone=UTC&useUnicode=true&charaterEncoding=utf-8&useSSL=false";
-        String b = "jdbc:log4jdbc:mysql://192.168.219.111:3306/intro?serverTimezone=UTC&useUnicode=true&charaterEncoding=utf-8&useSSL=false";
-        String c = "jdbc:log4jdbc:mysql://116.45.90.231:3306/intro?serverTimezone=UTC&useUnicode=true&charaterEncoding=utf-8&useSSL=false";
 
-        System.out.println("test :: " + a + " | 변경 test :: " + pbeEnc.encrypt(a));
+//        String a = "jdbc:log4jdbc:mysql://192.168.219.10:3306/intro?serverTimezone=UTC&useUnicode=true&charaterEncoding=utf-8&useSSL=false";
+        String b = "bean@@oper";
+        String c = "intro@@oper";
+
+//        System.out.println("test :: " + a + " | 변경 test :: " + pbeEnc.encrypt(a));
         System.out.println("test :: " + b + " | 변경 test :: " + pbeEnc.encrypt(b));
         System.out.println("test :: " + c + " | 변경 test :: " + pbeEnc.encrypt(c));
 

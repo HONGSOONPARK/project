@@ -79,6 +79,8 @@ jQuery(document).ready(function( $ ) {
 });
 
 
+
+
 // 이미지 클릭 -> 파일첨부버튼 트리거
 function fileUploads(num){
     $("#file_"+(num)).trigger("click");
@@ -120,6 +122,47 @@ function fileDelete(num){
 function pfModalSaveBtn(){
 	if(confirm("저장하시겠습니까?")){
 		$("#frmInsertPortfolio").submit();	
+	}
+}
+
+
+
+// 관리자 저장
+function saveBtn(id){
+	if(confirm("저장하시겠습니까?")){
+		$("#"+id).submit();
+	}
+}
+
+//자기소개서 저장
+function introSaveBtn(obj){
+		var num = findIdNum(obj);
+		if(confirm("저장하시겠습니까?")){
+			$(obj).parent().parent().parent().submit();
+		}
+}
+
+//자기소개서 삭제
+function introDelBtn(obj){
+	var frm = $(obj).parent().parent().parent();
+	var action = $(obj).val();
+	
+	if(confirm("삭제하시겠습니까?")){
+		var sendData = {no : frm.find("input[name='no']").val(), del_yn : 'Y'};
+		 	$.ajax({	
+				type: "POST",
+				url : action,
+				dataType: "text",
+				data : JSON.stringify(sendData),
+				contentType:"application/json;charset=UTF-8",
+				success : function(data, status, xhr) {
+					alert("삭제완료!");
+					$(obj).parent().parent().remove();
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					alert("실패 :"+errorThrown);
+				}
+			});	
 	}
 }
 
