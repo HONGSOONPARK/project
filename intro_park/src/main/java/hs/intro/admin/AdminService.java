@@ -128,6 +128,119 @@ public class AdminService
 
 
 
+	// 교육 추가
+	public void educationInsert(EducationVO educationvo) throws Exception{
+
+		// seq 업데이트
+		commonMapper.updateSeq("EDUCATION");
+		// 데이터 삽입
+		adminMapper.educationInsert(educationvo);
+
+	}
+
+
+	// 교육 업데이트
+	public void educationUpdate(EducationVO educationvo) throws Exception{
+
+		// 데이터 업데이트
+		adminMapper.educationUpdate(educationvo);
+	}
+
+	// 교육 삭제
+	public void educationDelete(EducationVO educationvo) throws Exception{
+		// del_yn = 'Y' 변경
+		adminMapper.educationDelete(educationvo);
+	}
+
+
+
+	// 경력 추가
+	public void careerInsert(CareerVO careervo) throws Exception{
+
+		// seq 업데이트
+		commonMapper.updateSeq("CAREER");
+		// 데이터 삽입
+		adminMapper.careerInsert(careervo);
+
+	}
+
+
+	// 경력 업데이트
+	public void careerUpdate(CareerVO careervo) throws Exception{
+
+		// 데이터 업데이트
+		adminMapper.careerUpdate(careervo);
+	}
+
+	// 경력 삭제
+	public void careerDelete(CareerVO careervo) throws Exception{
+		// del_yn = 'Y' 변경
+		adminMapper.careerDelete(careervo);
+		adminMapper.careerChildDelete(careervo);
+
+	}
+
+
+
+
+
+	// 프로젝트 추가
+	public void careerDetailInsert(CareerDetailVO careerdetailvo) throws Exception{
+
+		// seq 업데이트
+		commonMapper.updateSeq("CAREER_DETAIL");
+		// 데이터 삽입
+		adminMapper.careerDetailInsert(careerdetailvo);
+
+	}
+
+
+	// 프로젝트 업데이트
+	public void careerDetailUpdate(CareerDetailVO careerdetailvo) throws Exception{
+
+		// 데이터 업데이트
+		adminMapper.careerDetailUpdate(careerdetailvo);
+	}
+
+	// 프로젝트 삭제
+	public void careerDetailDelete(CareerDetailVO careerdetailvo) throws Exception{
+		// del_yn = 'Y' 변경
+		adminMapper.careerDetailDelete(careerdetailvo);
+	}
+
+
+
+
+	// 보유기술 추가
+	public void skillInsert(SkillVO skillvo) throws Exception{
+
+		// seq 업데이트
+		commonMapper.updateSeq("skill");
+		// 데이터 삽입
+		adminMapper.skillInsert(skillvo);
+
+	}
+
+
+	// 보유기술 업데이트
+	public void skillUpdate(SkillVO skillvo) throws Exception{
+
+		// 데이터 업데이트
+		adminMapper.skillUpdate(skillvo);
+	}
+
+	// 보유기술 삭제
+	public void skillDelete(SkillVO skillvo) throws Exception{
+		// del_yn = 'Y' 변경
+		adminMapper.skillDelete(skillvo);
+	}
+
+
+
+
+
+
+
 }
 
 

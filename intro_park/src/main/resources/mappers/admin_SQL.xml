@@ -3,29 +3,14 @@
 
 <mapper namespace="hs.intro.mapper.AdminMapper">
 
+	<!--  PORTFOLIO  -->
 	<select id="portfolioList" resultType="hs.intro.admin.PortfolioVO">
-<!-- 		SELECT  -->
-<!-- 			NO   -->
-<!-- 			,CATEGORY  -->
-<!-- 			,CORP  -->
-<!-- 			,PROJECT_TITLE -->
-<!-- 			,PROJECT_INTRO -->
-<!-- 			,DATE_FORMAT(START_DATE,'%Y/%m/%d') AS START_DATE -->
-<!-- 			,DATE_FORMAT(END_DATE,'%Y/%m/%d') AS END_DATE -->
-<!-- 			,CONTENTS		 -->
-<!-- 			,RESULT    	 -->
-<!-- 			,USE_YN		 -->
-<!-- 			,DATE_FORMAT(REG_DATE,'%Y/%m/%d') AS REG_DATE -->
-<!-- 		FROM -->
-<!-- 			PORTFOLIO -->
 			SELECT 
 				 A.NO  
 				,A.CATEGORY 
 				,A.CORP 
 				,A.PROJECT_TITLE
 				,A.PROJECT_INTRO
-<!-- 				,DATE_FORMAT(A.START_DATE,'%Y/%m/%d') AS START_DATE -->
-<!-- 				,DATE_FORMAT(A.END_DATE,'%Y/%m/%d') AS END_DATE -->
 				,A.START_DATE
 				,A.END_DATE
 				,A.CONTENTS		
@@ -45,6 +30,35 @@
 			WHERE 1=1
 				AND A.DEL_YN = 'N'
 			ORDER BY A.LIST_ORDER ASC
+	</select>
+	
+	
+	<select id="portfolioDetail" resultType="hs.intro.admin.PortfolioVO">
+			SELECT 
+				 A.NO  
+				,A.CATEGORY 
+				,A.CORP 
+				,A.PROJECT_TITLE
+				,A.PROJECT_INTRO
+				,A.START_DATE
+				,A.END_DATE
+				,A.CONTENTS		
+				,A.RESULT    	
+				,A.USE_YN
+				,A.DEL_YN
+				,A.ETC1
+				,A.ETC2				
+				,A.LIST_ORDER
+				,DATE_FORMAT(A.REG_DATE,'%Y/%m/%d') AS REG_DATE
+			  ,B.FILE_NO
+			  ,B.REF_NO
+			  ,B.FILE_EXPLAIN
+			  ,B.FILE_STORED_NAME
+			FROM
+				PORTFOLIO A LEFT OUTER JOIN FILES B ON A.NO = B.REF_NO
+			WHERE 1=1
+				AND A.DEL_YN = 'N'
+				AND A.NO = #{no}
 	</select>
 	
 	
@@ -122,14 +136,17 @@
 		WHERE
 			NO = #{no}
 	</update>
+	<!--  PORTFOLIO  -->
 	
 
-
+	<!--  ABOUT  -->
 	<select id="aboutList" resultType="hs.intro.admin.AboutVO">
 		SELECT 
 			A.NO,
 			A.CATEGORY,
-			A.INTRODUCE
+			A.INTRODUCE,
+			A.TITLE,
+			A.SUB_TITLE
 		FROM
 			ABOUT A
 	</select>
@@ -140,6 +157,8 @@
 		SET 
 			CATEGORY = #{category}
 			,INTRODUCE = #{introduce}
+			,TITLE = #{title}
+			,SUB_TITLE = #{sub_title}
 		WHERE
 			NO = #{no}
 	</update>
@@ -206,6 +225,325 @@
 		WHERE
 			NO = #{no}
 	</update>
+	
+	
+	<!--  ABOUT  -->
+	
+	<!--  RESUME  -->
+	<select id="educationList" resultType="hs.intro.admin.EducationVO">
+		SELECT
+			A.NO,
+			A.NAME, 
+			A.TYPE, 
+			A.DETAIL, 
+			A.USE_YN, 
+			A.START_DATE,
+			A.END_DATE,
+			A.STATUS,
+			A.LIST_ORDER
+		FROM EDUCATION A
+		WHERE 1=1
+				AND A.DEL_YN = 'N'
+		ORDER BY A.LIST_ORDER ASC
+	</select>	
+	
+
+	<update id="educationInsert" parameterType="hs.intro.admin.EducationVO">	
+		INSERT INTO 
+			EDUCATION
+			(
+				NO
+				,NAME     
+				,TYPE 
+				,DETAIL   
+				,USE_YN   
+				,START_DATE
+				,END_DATE
+				,DEL_YN
+				,STATUS
+				,LIST_ORDER
+				,REG_DATE
+			) 
+		VALUES
+			(	
+				(SELECT SEQ_NO FROM SEQ WHERE 1=1 AND SEQ_CODE = 'EDUCATION')
+				,#{name}
+				,#{type}
+				,#{detail}
+				,#{use_yn}
+				,#{start_date}
+				,#{end_date}
+				,#{del_yn}
+				,#{status}
+				,#{list_order}
+				,NOW()
+			)
+	</update>	
+	
+	
+	<update id="educationUpdate" parameterType="hs.intro.admin.EducationVO">	
+		UPDATE 
+			EDUCATION 
+		SET 
+			NAME = #{name}
+			,TYPE = #{type}
+			,DETAIL = #{detail}
+			,USE_YN = #{use_yn}
+			,START_DATE = #{start_date}
+			,END_DATE = #{end_date}
+			,USE_YN = #{use_yn}
+			,STATUS = #{status}
+			,LIST_ORDER = #{list_order}
+		WHERE
+			NO = #{no}
+	</update>
+	
+	
+	<update id="educationDelete" parameterType="hs.intro.admin.EducationVO">	
+		UPDATE 
+			EDUCATION 
+		SET 
+			DEL_YN = #{del_yn}
+		WHERE
+			NO = #{no}
+	</update>	
+	
+	<!-- EDUCATION -->	
+	
+	<select id="careerList" resultType="hs.intro.admin.CareerVO">
+		SELECT
+			A.NO,
+			A.NAME, 
+			A.TYPE, 
+			A.DETAIL, 
+			A.USE_YN, 
+			A.START_DATE,
+			A.END_DATE,
+			A.STATUS,
+			A.ATTACH_FILE,
+			A.LIST_ORDER
+		FROM CAREER A
+		WHERE 1=1
+				AND A.DEL_YN = 'N'
+		ORDER BY A.LIST_ORDER ASC
+	</select>	
+	
+
+	<update id="careerInsert" parameterType="hs.intro.admin.CareerVO">	
+		INSERT INTO 
+			CAREER
+			(
+				NO
+				,NAME   
+				,TYPE    
+				,DETAIL  
+				,USE_YN   
+				,START_DATE
+				,END_DATE
+				,DEL_YN
+				,STATUS
+				,ATTACH_FILE
+				,LIST_ORDER
+				,REG_DATE
+			) 
+		VALUES
+			(	
+				(SELECT SEQ_NO FROM SEQ WHERE 1=1 AND SEQ_CODE = 'CAREER')
+				,#{name}
+				,#{type}
+				,#{detail}
+				,#{use_yn}
+				,#{start_date}
+				,#{end_date}
+				,#{del_yn}
+				,#{status}
+				,#{attach_file}
+				,#{list_order}
+				,NOW()
+			)
+	</update>	
+	
+	
+	<update id="careerUpdate" parameterType="hs.intro.admin.CareerVO">	
+		UPDATE 
+			CAREER 
+		SET 
+			NAME = #{name}
+			,TYPE = #{type}
+			,DETAIL = #{detail}
+			,USE_YN = #{use_yn}
+			,START_DATE = #{start_date}
+			,END_DATE = #{end_date}
+			,USE_YN = #{use_yn}
+			,STATUS = #{status}
+			,ATTACH_FILE = #{attach_file}
+			,LIST_ORDER = #{list_order}
+		WHERE
+			NO = #{no}
+	</update>
+	
+	
+	<update id="careerDelete" parameterType="hs.intro.admin.CareerVO">	
+		UPDATE 
+			CAREER 
+		SET 
+			DEL_YN = #{del_yn}
+		WHERE
+			NO = #{no}
+	</update>	
+	
+	<update id="careerChildDelete" parameterType="hs.intro.admin.CareerVO">	
+		UPDATE 
+			CAREER_DETAIL 
+		SET 
+			DEL_YN = #{del_yn}
+		WHERE
+			REF_NO = #{no}
+	</update>	
+	
+	
+	<select id="careerDetailList" resultType="hs.intro.admin.CareerDetailVO">
+		SELECT
+			A.NO,
+			A.REF_NO,
+			A.PROJECT_NAME,
+			A.PROJECT_DETAIL, 
+			A.DEL_YN,
+			A.DETAIL_ORDER
+		FROM CAREER_DETAIL A
+		WHERE 1=1
+			AND A.DEL_YN = 'N'
+<!-- 			AND REF_NO = #{ref_no} -->
+		ORDER BY A.DETAIL_ORDER ASC
+	</select>	
+	
+
+	<update id="careerDetailInsert" parameterType="hs.intro.admin.CareerDetailVO">	
+		INSERT INTO 
+			CAREER_DETAIL
+			(
+				NO
+				,REF_NO   
+				,PROJECT_NAME    
+				,PROJECT_DETAIL   
+				,DETAIL_ORDER
+				,DEL_YN
+				,REG_DATE
+			) 
+		VALUES
+			(	
+				(SELECT SEQ_NO FROM SEQ WHERE 1=1 AND SEQ_CODE = 'CAREER_DETAIL')
+				,#{ref_no}
+				,#{project_name}
+				,#{project_detail}
+				,#{detail_order}
+				,#{del_yn}
+				,NOW()
+			)
+	</update>	
+	
+	
+	<update id="careerDetailUpdate" parameterType="hs.intro.admin.CareerDetailVO">	
+		UPDATE 
+			CAREER_DETAIL 
+		SET 
+			PROJECT_NAME = #{project_name}
+			,PROJECT_DETAIL = #{project_detail}
+			,DETAIL_ORDER = #{detail_order}
+			,DEL_YN = #{del_yn}
+		WHERE 1=1
+			AND NO = #{no}
+	</update>
+	
+	
+	<update id="careerDetailDelete" parameterType="hs.intro.admin.CareerDetailVO">	
+		UPDATE 
+			CAREER_DETAIL
+		SET 
+			DEL_YN = #{del_yn}
+		WHERE 1=1
+			AND NO = #{no}
+	</update>			
+		
+	<!--  RESUME  -->
+	
+	
+	
+	<!--  SKILL  -->
+	<select id="skillList" resultType="hs.intro.admin.SkillVO">
+		SELECT
+			A.NO,
+			A.SKILL_NAME, 
+			A.SKILL_ID, 
+			A.PERCENTAGE, 
+			A.USE_YN,
+			A.DETAIL, 
+			A.ETC,  
+			A.LIST_ORDER
+		FROM SKILL A
+		WHERE 1=1
+				AND A.DEL_YN = 'N'
+		ORDER BY A.LIST_ORDER ASC
+	</select>	
+	
+
+	<update id="skillInsert" parameterType="hs.intro.admin.SkillVO">	
+		INSERT INTO 
+			SKILL
+			(
+				NO
+				,SKILL_NAME
+				,SKILL_ID 
+				,PERCENTAGE
+				,DETAIL
+				,ETC 
+				,USE_YN
+				,DEL_YN  
+				,LIST_ORDER
+				,REG_DATE
+			) 
+		VALUES
+			(	
+				(SELECT SEQ_NO FROM SEQ WHERE 1=1 AND SEQ_CODE = 'SKILL')
+				,#{skill_name}
+				,#{skill_id}
+				,#{percentage}
+				,#{detail}
+				,#{etc}
+				,#{use_yn}
+				,#{del_yn}
+				,#{list_order}
+				,NOW()
+			)
+	</update>	
+	
+	
+	<update id="skillUpdate" parameterType="hs.intro.admin.SkillVO">	
+		UPDATE 
+			SKILL 
+		SET 
+			SKILL_NAME = #{skill_name}
+			,SKILL_ID = #{skill_id}
+			,DETAIL = #{detail}
+			,ETC = #{etc}
+			,USE_YN = #{use_yn}
+			,PERCENTAGE = #{percentage}
+			,LIST_ORDER = #{list_order}
+		WHERE
+			NO = #{no}
+	</update>
+	
+	
+	<update id="skillDelete" parameterType="hs.intro.admin.SkillVO">	
+		UPDATE 
+			SKILL 
+		SET 
+			DEL_YN = #{del_yn}
+		WHERE
+			NO = #{no}
+	</update>
+	<!--  SKILL  -->		
+	
 </mapper>
 
 

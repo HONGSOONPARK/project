@@ -1,3 +1,4 @@
+
 package hs.intro.admin;
 
 import java.io.Serializable;
@@ -9,17 +10,25 @@ import lombok.Setter;
 
 @Data @Getter @Setter
 //@EqualsAndHashCode(callSuper=true)
-public class IntroduceVO implements Serializable {
+public class CareerVO implements Serializable {
 
 	private static final long serialVersionUID = 5931152279161665150L;
 
-	private List<IntroduceVO> introducevo;
+	private List<CareerVO> careervo;
 	private Integer no;
-	private String title;
-	private String sub_title;
-	private String introduce;
+	private String name;
+	private String type;
+	private String detail;
 	private String use_yn;
+
+	private String start_date;
+	private String end_date;
+
 	private String del_yn;
+	private String status;
+
+	private String attach_file;
+
 	private Integer list_order;
 	private String reg_date;
 

@@ -68,7 +68,7 @@
 		</p>
 		<p>
 			정렬순서 &nbsp;- 
-			<input type="text" value="${list.getList_order()}" id="list_order" name="list_order" class="portfolioText w50" />
+			<input type="text" value="${list.getList_order()}" id="list_order" name="list_order" class="portfolioText w35" />
 		</p>
 		<p>
 			회사소속 &nbsp;- 

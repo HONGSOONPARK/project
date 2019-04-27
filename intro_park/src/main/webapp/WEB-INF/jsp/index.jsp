@@ -15,11 +15,6 @@
 	  gtag('config', 'UA-137183362-1');
 	</script>
 		
-
-
-
-
-
   <!-- =======================================================
     Template Name: Kelvin
     Template URL: https://templatemag.com/kelvin-bootstrap-resume-template/
@@ -30,48 +25,25 @@
 
 <body data-spy="scroll" data-offset="64" data-target="#section-topbar">
 
-  <div id="section-topbar">
-    <div id="topbar-inner">
-      <div class="container">
-        <div class="row">
-          <div class="dropdown">
-            <ul id="nav" class="nav">
-              <li class="menu-item"><a class="smothscroll" href="#about" title="About"><i class="fa fa-user"></i></a></li>
-              <li class="menu-item"><a class="smothscroll" href="#resume" title="Resume"><i class="fa fa-file-text-o"></i></a></li>
-              <li class="menu-item"><a class="smothscroll" href="#portfolio" title="Portfolio"><i class="fa fa-briefcase"></i></a></li>
-              <li class="menu-item"><a class="smothscroll" href="#contact" title="Contact"><i class="fa fa-envelope"></i></a></li>
-            </ul>
-            <!--/ uL#nav -->
-          </div>
-          <!-- /.dropdown -->
-
-          <div class="clear"></div>
-        </div>
-        <!--/.row -->
-      </div>
-      <!--/.container -->
-
-      <div class="clear"></div>
-    </div>
-    <!--/ #topbar-inner -->
-  </div>
-  <!--/ #section-topbar -->
-
-  <div id="headerwrap">
-    <div class="container" style="width: 100%">
-      <div class="row centered">
-<!--         <div class="col-lg-12"> -->
-          <h1>Park Hong Soon</h1>
-          <h3>Web Developer | phs39@naver.com</h3>
-<!--         </div> -->
-        <!--/.col-lg-12 -->
-      </div>
-      <!--/.row -->
-    </div>
-    <!--/.container -->
-  </div>
-  <!--/.#headerwrap -->
-
+<div id="section-topbar">
+	<div id="topbar-inner">
+		<div class="container">
+			<div class="row">
+				<div class="dropdown">
+					<ul id="nav" class="nav">
+						<li class="menu-item"><a class="smothscroll" href="#about" title="About"><i class="fa fa-user"></i></a></li>
+						<li class="menu-item"><a class="smothscroll" href="#resume" title="Resume"><i class="fa fa-file-text-o"></i></a></li>
+						<li class="menu-item"><a class="smothscroll" href="#skillswrap" title="skill"><i class="fa fa-book"></i></a></li>
+						<li class="menu-item"><a class="smothscroll" href="#portfolio" title="Portfolio"><i class="fa fa-briefcase"></i></a></li>
+						<li class="menu-item"><a class="smothscroll" href="#contact" title="Contact"><i class="fa fa-envelope"></i></a></li>
+				  	</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
 
 <!-- 소개 -->
 <%@include file="/WEB-INF/jsp/section/about.jsp" %>

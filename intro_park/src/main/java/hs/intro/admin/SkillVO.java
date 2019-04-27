@@ -9,15 +9,17 @@ import lombok.Setter;
 
 @Data @Getter @Setter
 //@EqualsAndHashCode(callSuper=true)
-public class IntroduceVO implements Serializable {
+public class SkillVO implements Serializable {
 
 	private static final long serialVersionUID = 5931152279161665150L;
 
-	private List<IntroduceVO> introducevo;
+	private List<SkillVO> skillvo;
 	private Integer no;
-	private String title;
-	private String sub_title;
-	private String introduce;
+	private String skill_name;
+	private String skill_id;
+	private Integer percentage;
+	private String detail;
+	private String etc;
 	private String use_yn;
 	private String del_yn;
 	private Integer list_order;

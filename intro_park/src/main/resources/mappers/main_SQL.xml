@@ -36,7 +36,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="about" resultType="hs.intro.admin.AboutVO">
 		SELECT 
 			A.CATEGORY,
-			A.INTRODUCE
+			A.INTRODUCE,
+			A.TITLE,
+			A.SUB_TITLE
 		FROM
 			ABOUT A
 	</select>
@@ -54,6 +56,77 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			AND A.USE_YN = 'Y'
 		ORDER BY A.LIST_ORDER ASC
 	</select>
+	
+	<select id="education" resultType="hs.intro.admin.EducationVO">
+		SELECT
+			A.NO,
+			A.NAME, 
+			A.TYPE, 
+			A.DETAIL, 
+			A.USE_YN, 
+			A.START_DATE,
+			A.END_DATE,
+			A.STATUS,
+			A.LIST_ORDER
+		FROM EDUCATION A
+		WHERE 1=1
+			AND A.DEL_YN = 'N'
+			AND A.USE_YN = 'Y'
+		ORDER BY A.LIST_ORDER ASC
+	</select>
+	
+	<select id="career" resultType="hs.intro.admin.CareerVO">
+		SELECT
+			A.NO,
+			A.NAME, 
+			A.TYPE, 
+			A.DETAIL, 
+			A.USE_YN, 
+			A.START_DATE,
+			A.END_DATE,
+			A.STATUS,
+			A.ATTACH_FILE,
+			A.LIST_ORDER
+		FROM CAREER A
+		WHERE 1=1
+				AND A.DEL_YN = 'N'
+		ORDER BY A.LIST_ORDER ASC
+	</select>	
+	
+	<select id="careerDetailList" resultType="hs.intro.admin.CareerDetailVO">
+		SELECT
+			A.NO,
+			A.REF_NO,
+			A.PROJECT_NAME,
+			A.PROJECT_DETAIL, 
+			A.DEL_YN,
+			A.DETAIL_ORDER
+		FROM CAREER_DETAIL A
+		WHERE 1=1
+			AND A.DEL_YN = 'N'
+		ORDER BY A.DETAIL_ORDER ASC
+	</select>		
+	
+	
+	<!--  SKILL  -->
+	<select id="skill" resultType="hs.intro.admin.SkillVO">
+		SELECT
+			A.NO,
+			A.SKILL_NAME, 
+			A.SKILL_ID, 
+			A.PERCENTAGE,
+			A.DETAIL,
+			A.ETC, 
+			A.USE_YN, 
+			A.LIST_ORDER
+		FROM SKILL A
+		WHERE 1=1
+			AND A.USE_YN = 'Y'
+			AND A.DEL_YN = 'N'
+		ORDER BY A.LIST_ORDER ASC
+	</select>		
+
+	
 </mapper>
 
 

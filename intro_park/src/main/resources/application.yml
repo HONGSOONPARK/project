@@ -52,6 +52,22 @@ spring:
     upload-dir: C:/eGovFrameDev/git/PROJECT/intro_park/src/main/webapp/uploads/portfolio/    
 ---
 
+spring:
+  profiles: test      
+  datasource:
+#    Centos7(내부접속IP)
+#    url: ENC(BshfTxXPXUqDXGyxbz97uypmoN0ZB+Fl7WeW7JrY45XsC8gGWfEYL08hgsNCqXuPjSVrTxR11iADoyFuZFMH14aFJnTV41/yCcU4P3y1OZN62zY2ExLjx9jPskzxmSrY/xG5/y2m+32fvbrGXujZ7p5/+4cYvSeh)
+    url: ENC(5KzhYOEr3Rhy8BMjEA7TQws5iYy9qmY23yKwE625WuJZg3fN8knr7vvANEDGa7ZMM6rm27dQpa5ZykF51kJyZe2xoDeTv+Ob9hNKZu4GX2qArcjt0UozVdU5I0fckUHOjI6mjAltlK9FrRKVnzW9HPnIeu5RnrqtxsRpIyk+eJU=)
+    username: ENC(P8FxIq/nBrpD50wSQP73Bg==)
+    password: ENC(NOjGXi/4d0PmeIzPwbVhqTqxoabw2oG2)
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    dbcp2:
+      validation-query: select 1
+      test-while-idle: true
+      time-between-eviction-runs-millis: 7200000  
+  file:
+    upload-dir: /home/tomcat8/tomcat8/webapps/intro_park/uploads/portfolio/  
+---
 
 
 # Raspberry Pi(운영환경)

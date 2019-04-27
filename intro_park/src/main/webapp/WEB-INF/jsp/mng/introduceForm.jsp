@@ -11,7 +11,7 @@
 		</div>
 	</c:if>
 	
-	<p>정렬순서&nbsp;- <input type="text" value="${invo.getList_order() }" id="list_order" name="list_order" class="aboutText w50" /></p>
+	<p>정렬순서&nbsp;- <input type="text" value="${invo.getList_order() }" id="list_order" name="list_order" class="aboutText w35" /></p>
 	<p>공개여부&nbsp;- 
 		<select class="aboutText w65" id="use_yn" name="use_yn">
 			<option value="" <c:if test="${invo.getUse_yn() eq null}">selected="selected"</c:if> >선택</option>
@@ -20,8 +20,8 @@
 		</select>
 	</p>
 	
-	<p>질문내용 &nbsp;- <input type="text" value="${invo.getTitle() }" id="title" name="title" class="aboutText w350" /></p>
-	<p>소개내용 &nbsp;- <input type="text" value="${invo.getSub_title() }" id="sub_title" name="sub_title" class="aboutText w350" /></p>
+	<p>질문내용 &nbsp;- <input type="text" value="${invo.getTitle() }" id="title" name="title" class="aboutText w75p" /></p>
+	<p>소제목　 &nbsp;- <input type="text" value="${invo.getSub_title() }" id="sub_title" name="sub_title" class="aboutText w75p" /></p>
 	<p>내용<textarea rows="8" class="aboutText txtArea" id="introduce" name="introduce">${invo.getIntroduce() }</textarea></p>
 	
 

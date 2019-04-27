@@ -24,9 +24,9 @@ public class FileService
 	CommonMapper commonMapper;
 
 //	  private String fileUrl = "C:/eGovFrameDev/git/PROJECT/intro_park/src/main/webapp/uploads/portfolio/";
-	  private String fileUrl = dir;
 
 	  public List<FileVO> fileStore(MultipartFile[] files) throws Exception{
+
 			FileVO filevo = null;
 			List<FileVO> fileList = new ArrayList<FileVO>();
 			String sourceFileName;
@@ -48,7 +48,7 @@ public class FileService
 
 		            do {
 		                destinationFileName = RandomStringUtils.randomAlphanumeric(32) + "." + sourceFileNameExtension;
-		                destinationFile = new File(fileUrl + destinationFileName);
+		                destinationFile = new File(dir + destinationFileName);
 
 		                // 파일 변경된 이름
 		                filevo.setFile_stored_name(destinationFileName);

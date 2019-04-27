@@ -1,4 +1,3 @@
-
 // csrf 토큰 추가
 var token = $("meta[name='_csrf']").attr("content");
 var header = $("meta[name='_csrf_header']").attr("content");
@@ -30,11 +29,8 @@ $.fn.serializeObject = function(){
 };
 
 jQuery(document).ready(function( $ ) {
-
 	
-	
-	
-  // Smooth scroll for the menu and links with .scrollto classes
+	// Smooth scroll for the menu and links with .scrollto classes
   $('.smothscroll').on('click', function(e) {
     e.preventDefault();
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -78,6 +74,51 @@ jQuery(document).ready(function( $ ) {
   
 });
 
+// 경력사항 프로젝트 상세 저장
+function cdSaveBtn(obj){
+	if(confirm("저장하시겠습니까??")){
+		$(obj).parent().parent().parent().submit();
+	}
+}
+
+// 경력사항 프로젝트 상세 삭제
+function cdDelBtn(obj){
+	var frm = $(obj).parent().parent().parent();
+	var action = $(obj).val();
+	
+	if(confirm("삭제하시겠습니까?")){
+		var sendData = {no : frm.find("input[name='no']").val(), del_yn : 'Y'};
+		 	$.ajax({	
+				type: "POST",
+				url : action,
+				dataType: "text",
+				data : JSON.stringify(sendData),
+				contentType:"application/json;charset=UTF-8",
+				success : function(data, status, xhr) {
+					alert("삭제완료!");
+					$(obj).parent().parent().parent().parent().remove();
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					alert("실패 :"+errorThrown);
+				}
+			});	
+	}
+}
+
+
+
+
+function btnTrigger(id,refno){
+	$("#"+id).trigger("click");
+	$("#insPrjRefNo").val(refno);
+}
+
+
+//function pdfDown(){
+//	$("#introModalBody").find("p").each(function(e) {
+//		$(this).text();
+//	});
+//}
 
 
 
@@ -134,7 +175,17 @@ function saveBtn(id){
 	}
 }
 
-//자기소개서 저장
+//// 경력사항 저장
+//function saveRefBtn(obj,refno){
+//		var num = findIdNum(obj);
+//		$("#ref_no").val(refno);
+//		if(confirm("저장하시겠습니까?")){
+//			$(obj).parent().parent().parent().submit();
+//		}
+//}
+
+
+// 저장
 function introSaveBtn(obj){
 		var num = findIdNum(obj);
 		if(confirm("저장하시겠습니까?")){
@@ -157,7 +208,7 @@ function introDelBtn(obj){
 				contentType:"application/json;charset=UTF-8",
 				success : function(data, status, xhr) {
 					alert("삭제완료!");
-					$(obj).parent().parent().remove();
+					$(obj).parent().parent().parent().remove();
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
 					alert("실패 :"+errorThrown);
@@ -175,6 +226,7 @@ function pfSaveBtn(obj){
 		}
 }
 
+
 // 포트폴리오 삭제
 function pfDelBtn(obj){
 	var num = findIdNum(obj);
@@ -191,7 +243,7 @@ function pfDelBtn(obj){
 				contentType:"application/json;charset=UTF-8",
 				success : function(data, status, xhr) {
 					alert("삭제완료!");
-					$(obj).parent().parent().remove();
+					$(obj).parent().parent().parent().parent().remove();
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
 					alert("실패 :"+errorThrown);
@@ -225,6 +277,109 @@ function showAlert(element_id, label_txt){
 	alert(label_txt + " 필수 값 입니다. ");
 	$("#" + element_id).focus();
 }
+
+
+
+
+function ajaxSave(obj,type){
+
+	var arry = new Array(); 
+	var element; 
+	var action;
+	if(type == 'form'){
+		element = $(obj).parent().parent();
+		action = element.prop("action");
+	}else if(type == 'div'){
+		element = $(obj).parent().parent();
+		action = element.parent().prop("action");
+	}else if(type == 'career'){
+		element = $(obj).parent().parent().parent();
+		action = element.prop("action");
+	}
+	
+	var itemObj = new Object();	
+	element.find('input, select, radio, textarea').each(function(i) {
+		var element_name = $(this).attr("name");
+		itemObj[element_name] = $(this).val();
+	});
+	
+	var sendData = itemObj;
+ 	$.ajax({	
+		type: "POST",
+		url : action,
+		dataType: "text",
+		data : JSON.stringify(sendData),
+		contentType:"application/json;charset=UTF-8",
+		success : function(data, status, xhr) {
+			alert("저장 완료!");
+		},
+		error: function(jqXHR, textStatus, errorThrown) {
+			alert("실패 :"+errorThrown);
+		}
+	});		
+	
+	
+}
+
+//
+//
+//
+//function ajaxModalSave(obj,type){
+//
+//	var arry = new Array(); 
+//	var element; 
+//	var action;
+//	
+//	if(type == 'form'){
+//		element = $(obj).parent().parent();
+//		action = element.prop("action");
+//	}else if(type == 'div'){
+//		element = $(obj).parent().parent();
+//		action = element.parent().prop("action");
+//	}else if(type == 'career'){
+//		element = $(obj).parent().parent();
+//		action = element.prop("action");
+//	}
+//	
+//	var itemObj = new Object();	
+//	
+//	
+//	element.children(".modal-body").find('input, select, radio, textarea').each(function(i) {
+//		var element_name = $(this).attr("name");
+//		itemObj[element_name] = $(this).val();
+//	});
+//	
+//	var sendData = itemObj;
+//	
+// 	$.ajax({	
+//		type: "POST",
+//		url : action,
+//		dataType: "text",
+//		data : JSON.stringify(sendData),
+//		contentType:"application/json;charset=UTF-8",
+//		success : function(data, status, xhr) {
+//			alert("저장 완료!");
+////			$('#addIntroduce').modal("hide");
+//			location.reload();  
+//		},
+//		error: function(jqXHR, textStatus, errorThrown) {
+//			alert("실패 :"+errorThrown);
+//		}
+//	});	
+// 	
+// 	
+//}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
