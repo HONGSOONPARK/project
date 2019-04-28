@@ -10,3 +10,8 @@
 
 # 페이지
 http://hongsoon.ga:8888
+
+# 관리자 페이지
+http://hongsoon.ga:8888/mng/adminLogin
+
+- id : guest / pwd : guest
