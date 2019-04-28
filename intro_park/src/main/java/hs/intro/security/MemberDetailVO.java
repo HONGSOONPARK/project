@@ -9,8 +9,10 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Data @Getter @Setter
 public class MemberDetailVO implements UserDetails {
 
 	private static final long serialVersionUID = -8723881098348330589L;

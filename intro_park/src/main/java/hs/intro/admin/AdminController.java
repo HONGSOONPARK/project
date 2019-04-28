@@ -42,6 +42,7 @@ public class AdminController {
 	@GetMapping("/mng/adminMain")
     public ModelAndView adminMain() throws Exception{
 		ModelAndView mv = new ModelAndView("mng/adminMain");
+
 		List<PortfolioVO> pfvo = adminMapper.portfolioList();
 		List<IntroduceVO> introducevo = adminMapper.introduceList();
 		List<EducationVO> educationvo = adminMapper.educationList();
@@ -56,6 +57,10 @@ public class AdminController {
 		mv.addObject("careervo", careervo);
 		mv.addObject("careerdetailvo", careerdetailvo);
 		mv.addObject("skillvo", skillvo);
+
+
+
+
 		return mv;
     }
 

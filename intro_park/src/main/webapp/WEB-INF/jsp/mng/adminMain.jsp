@@ -55,34 +55,26 @@
 							<li class="menu-item"><a class="smothscroll" href="#skill" title="skill"><i class="fa fa-book"></i></a></li>
 							<li class="menu-item"><a class="smothscroll" href="#portfolio" title="portfolio"><i class="fa fa-folder-open"></i></a></li>
 						</ul>
-						<!--/ uL#nav -->
 					</div>
-					<!-- /.dropdown -->
 
 					<div class="clear"></div>
 				</div>
-				<!--/.row -->
 			</div>
-			<!--/.container -->
 
 			<div class="clear"></div>
 		</div>
-		<!--/ #topbar-inner -->
 	</div>
-	<!--/ #section-topbar -->
 	<section id="about" name="about" class="mngAbout">
 		<h2 align="center">소개글</h2>
 
 		<div class="container">
 		<div align="right" class="">
-<!-- 		floating -->
-				<a href="#addIntroduce" class="adminSaveBtn" id="addIntroduceBtn" data-toggle="modal" data-backdrop="static" data-keyboard="false">자기소개서 추가&nbsp;<span class="glyphicon glyphicon-plus-sign"></span></a>
+			<a href="#addIntroduce" class="adminSaveBtn" id="addIntroduceBtn" data-toggle="modal" data-backdrop="static" data-keyboard="false">자기소개서 추가&nbsp;<span class="glyphicon glyphicon-plus-sign"></span></a>
 		</div>
 		<div id="aboutWrap" class="divWrap">
 			<div id="aboutDiv" class="aboutDiv">
 				<form id="frmAbout" method="post" action="<c:url value='/mng/aboutSave'/>"  style="overflow:auto">
 					<div align="right" class="">
-<!-- 						<button type="button" class="adminSaveBtn" id="adminSaveBtn" onclick="saveBtn('frmAbout')">저장&nbsp;<span class="glyphicon glyphicon-floppy-disk"></span></button> -->
 						<button type="button" class="adminSaveBtn" id="adminSaveBtn" onclick="ajaxSave(this,'form');">저장&nbsp;<span class="glyphicon glyphicon-floppy-disk"></span></button>
 					</div>
 						<p>메인글자&nbsp;- <input type="text" value="${aboutvo.getTitle() }" id="title" name="title" class="aboutText w120" /></p>
@@ -90,11 +82,8 @@
 						<p>소개제목&nbsp;- <input type="text" value="${aboutvo.getCategory() }" id="category" name="category" class="aboutText w250" /></p>
 						<p>간략소개<textarea rows="6" class="aboutText txtArea" id="introduce" name="introduce">${aboutvo.getIntroduce() }</textarea></p>				
 				    <input type="hidden"  name="no" value="${aboutvo.no}" />
-<%-- 					<input type="hidden"  name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>
 				</form>	
 			</div>
-<!-- 		</div> -->
-<!-- 		<div class="container desc"> -->
 		
 			<c:choose>
 				<c:when test="${fn:length(introducevo) > 0 }">
