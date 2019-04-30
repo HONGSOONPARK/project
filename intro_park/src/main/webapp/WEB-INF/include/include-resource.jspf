@@ -11,6 +11,16 @@
 	<meta http-equiv="Subject" content="웹 개발자 포트폴리오" />
 	<meta http-equiv="Author" content="PARK HONG SOON" />
 	<meta name="Keywords" content="Web, html, 웹 표준, 웹 개발, 박홍순, hongsoon, 포트폴리오, portfolio, 취업, 웹 개발자 포트폴리오, 반응형웹, Spring, 전자정부프레임워크, bootstrap, jsp, jquery, css, 개발자 포트폴리오, 자기소개서, PARK HONG SOON" />
+	
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="안녕하세요. 박홍순입니다.">
+	<meta property="og:url" content="http://hongsoon.ga:8888/">
+	<meta property="og:description" content="자기소개, 보유기술, 포트폴리오 ...">
+	<meta property="og:image:width" content="400" />
+	<meta property="og:image:height" content="400" />
+	<meta property="og:image" content="<c:url value='/resources/parkhongsoon_ori.jpg'/>">
+	
+	
 
 
   	<!-- Favicons -->
