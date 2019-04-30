@@ -3,6 +3,7 @@ package hs.intro.admin;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import hs.intro.common.FileService;
 import hs.intro.mapper.AdminMapper;
+import hs.intro.security.MemberDetailVO;
+
+
 
 
 @Controller
@@ -38,10 +42,14 @@ public class AdminController {
         return "mng/adminLogin";
     }
 
+
+
 	// 관리자 메인 화면(로그인 성공시)
 	@GetMapping("/mng/adminMain")
-    public ModelAndView adminMain() throws Exception{
+    public ModelAndView adminMain(Authentication auth) throws Exception{
 		ModelAndView mv = new ModelAndView("mng/adminMain");
+
+		MemberDetailVO memberdetailvo = (MemberDetailVO) auth.getDetails();
 
 		List<PortfolioVO> pfvo = adminMapper.portfolioList();
 		List<IntroduceVO> introducevo = adminMapper.introduceList();
@@ -57,6 +65,9 @@ public class AdminController {
 		mv.addObject("careervo", careervo);
 		mv.addObject("careerdetailvo", careerdetailvo);
 		mv.addObject("skillvo", skillvo);
+
+		mv.addObject("memberdetailvo",memberdetailvo );
+
 
 
 

@@ -53,6 +53,9 @@ public class AuthProvider implements AuthenticationProvider  {
 
 	        // 로그인 성공시 로그인 사용자 정보 반환
 	        UsernamePasswordAuthenticationToken result = new UsernamePasswordAuthenticationToken(id, password, grantedAuthorityList);
+
+	        result.setDetails(member);
+
 	        return result;
 	}
 

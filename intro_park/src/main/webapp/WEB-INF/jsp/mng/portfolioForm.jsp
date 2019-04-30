@@ -6,8 +6,14 @@
 
 	<c:if test="${status.count ne null }">
 		<div align="right" class="">
+		<c:choose>
+		<c:when test='${memberdetailvo.getMember_role() eq "A"}'>
 			<button type="button" class="adminSaveBtn" id="pfSaveBtn_${status.count - 1}" onclick="pfSaveBtn(this);" value="<c:url value='/mng/pfSave'/>" >저장&nbsp;<span class="glyphicon glyphicon-floppy-disk"></span></button>
 			<button type="button" class="adminSaveBtn" id="pfDelBtn_${status.count - 1}" onclick="pfDelBtn(this);" value="<c:url value='/mng/pfDel'/>" >삭제&nbsp;<span class="glyphicon glyphicon-remove-sign"></span></button>
+		</c:when>
+		<c:otherwise><b>쓰기,삭제 권한 없음</b></c:otherwise>
+		</c:choose>
+
 		</div>
 	</c:if>
 	
@@ -39,7 +45,7 @@
 <!-- 			</p> -->
 			<p>
 				이미지 클릭시 url &nbsp;- 
-				<input type="text" value="${list.getEtc1()}" class="portfolioText w320" id="etc1" name="etc1"/>
+				<input type="text" value="${list.getEtc1()}" class="portfolioText w50p" id="etc1" name="etc1"/>
 			</p>
 		</div>
 		<div <c:if test="${status.count eq null}">id="fileDiv_${fn:length(pfvo)+1}"</c:if><c:if test="${status.count ne null }">id="fileDiv_${status.count-1 }"</c:if>>
@@ -48,7 +54,7 @@
 	<!-- 포트폴리오 이미지 -->
 	
 	<!-- 포트폴리오 내용 -->
-	<div id="pr_p" class="col-lg-3">
+	<div id="pr_p" class="col-lg-6">
 		<input type="hidden" value="${list.getNo()}" class="portfolioText" id="no" name="no" /> 
 		<p>
 			공개여부 &nbsp;- 
@@ -57,7 +63,8 @@
 				<option value="Y" <c:if test="${list.getUse_yn() eq 'Y'}">selected="selected"</c:if> >공개</option>
 				<option value="N" <c:if test="${list.getUse_yn() eq 'N'}">selected="selected"</c:if> >비공개</option>
 			</select> 
-			&nbsp;
+		</p>
+		<p>
 			유형구분 &nbsp;- 
 			<select class="portfolioText w65" id="category" name="category">
 				<option value="" <c:if test="${list.getCategory() eq null}">selected="selected"</c:if> >선택</option>
@@ -66,6 +73,8 @@
 				<option value="개인" <c:if test="${list.getCategory() eq '개인'}">selected="selected"</c:if> >개인</option>
 			</select> 
 		</p>
+		
+		
 		<p>
 			정렬순서 &nbsp;- 
 			<input type="text" value="${list.getList_order()}" id="list_order" name="list_order" class="portfolioText w35" />
@@ -76,11 +85,11 @@
 		</p>
 		<p>
 			프로젝트 &nbsp;- 
-			<input type="text" value="${list.getProject_title()}" id="project_title" name="project_title" class="portfolioText w320"/>
+			<input type="text" value="${list.getProject_title()}" id="project_title" name="project_title" class="portfolioText w100p"/>
 		</p>
 		<p>
 			간략소개 &nbsp;- 
-			<input type="text" value="${list.getProject_intro()}" id="project_intro" name="project_intro" class="portfolioText w320"/>
+			<input type="text" value="${list.getProject_intro()}" id="project_intro" name="project_intro" class="portfolioText w100p"/>
 		</p>
 		<p>수행기간 &nbsp;- </p>
 		<p>
@@ -90,11 +99,11 @@
 		</p>
 		<p>수행내용</p>
 		<p>
-			<textarea rows="6" cols="50" class="portfolioTextArea" id="contents" name="contents">${list.getContents()}</textarea>
+			<textarea rows="6" class="portfolioTextArea w100p" id="contents" name="contents">${list.getContents()}</textarea>
 		</p>
 		<p>성과</p>
 		<p>
-			<textarea rows="5" cols="50" class="portfolioTextArea" id="result" name="result">${list.getResult()}</textarea>						
+			<textarea rows="5" class="portfolioTextArea w100p" id="result" name="result">${list.getResult()}</textarea>						
 		</p>
 	</div>
 	

@@ -6,8 +6,13 @@
 <div id="introduceDiv" class="introduceDiv itd">
 	<c:if test="${status2.count ne null }">
 		<div align="right" class="">
+		<c:choose>
+		<c:when test='${memberdetailvo.getMember_role() eq "A"}'>
 			<button type="button" class="adminSaveBtn" id="introSaveBtn_${status2.count - 1}" onclick="introSaveBtn(this);" value="<c:url value='adminSaveBtn'/>" >저장&nbsp;<span class="glyphicon glyphicon-floppy-disk"></span></button>
 			<button type="button" class="adminSaveBtn" id="introDelBtn_${status2.count - 1}" onclick="introDelBtn(this);" value="<c:url value='/mng/careerDetailDel'/>" >삭제&nbsp;<span class="glyphicon glyphicon-remove-sign"></span></button>
+		</c:when>
+		<c:otherwise><b>쓰기,삭제 권한 없음</b></c:otherwise>
+		</c:choose>		
 		</div>
 	</c:if>
 	

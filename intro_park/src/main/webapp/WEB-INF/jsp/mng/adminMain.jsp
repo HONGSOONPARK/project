@@ -54,9 +54,9 @@
 							<li class="menu-item"><a class="smothscroll" href="#career" title="career"><i class="fa fa-briefcase"></i></a></li>
 							<li class="menu-item"><a class="smothscroll" href="#skill" title="skill"><i class="fa fa-book"></i></a></li>
 							<li class="menu-item"><a class="smothscroll" href="#portfolio" title="portfolio"><i class="fa fa-folder-open"></i></a></li>
+							<li class="menu-item"><a class="" href="javascript:adminLogout('<c:url value='/mng/adminLogout'/>');" title="logouts"><i class="fa fa-sign-out"></i></a></li>
 						</ul>
 					</div>
-
 					<div class="clear"></div>
 				</div>
 			</div>
@@ -64,9 +64,10 @@
 			<div class="clear"></div>
 		</div>
 	</div>
+	
 	<section id="about" name="about" class="mngAbout">
 		<h2 align="center">소개글</h2>
-
+		
 		<div class="container">
 		<div align="right" class="">
 			<a href="#addIntroduce" class="adminSaveBtn" id="addIntroduceBtn" data-toggle="modal" data-backdrop="static" data-keyboard="false">자기소개서 추가&nbsp;<span class="glyphicon glyphicon-plus-sign"></span></a>
@@ -75,11 +76,16 @@
 			<div id="aboutDiv" class="aboutDiv">
 				<form id="frmAbout" method="post" action="<c:url value='/mng/aboutSave'/>"  style="overflow:auto">
 					<div align="right" class="">
-						<button type="button" class="adminSaveBtn" id="adminSaveBtn" onclick="ajaxSave(this,'form');">저장&nbsp;<span class="glyphicon glyphicon-floppy-disk"></span></button>
+						<c:choose>
+						<c:when test='${memberdetailvo.getMember_role() eq "A"}'>
+							<button type="button" class="adminSaveBtn" id="adminSaveBtn" onclick="ajaxSave(this,'form');">저장&nbsp;<span class="glyphicon glyphicon-floppy-disk"></span></button>
+						</c:when>
+						<c:otherwise><b>쓰기,삭제 권한 없음</b></c:otherwise>
+						</c:choose>						
 					</div>
-						<p>메인글자&nbsp;- <input type="text" value="${aboutvo.getTitle() }" id="title" name="title" class="aboutText w120" /></p>
-						<p>메인밑에&nbsp;- <input type="text" value="${aboutvo.getSub_title() }" id="sub_title" name="sub_title" class="aboutText w120" /></p>
-						<p>소개제목&nbsp;- <input type="text" value="${aboutvo.getCategory() }" id="category" name="category" class="aboutText w250" /></p>
+						<p>메인글자&nbsp;- <input type="text" value="${aboutvo.getTitle() }" id="title" name="title" class="aboutText w35p" /></p>
+						<p>메인밑에&nbsp;- <input type="text" value="${aboutvo.getSub_title() }" id="sub_title" name="sub_title" class="aboutText w35p" /></p>
+						<p>소개제목&nbsp;- <input type="text" value="${aboutvo.getCategory() }" id="category" name="category" class="aboutText w35p" /></p>
 						<p>간략소개<textarea rows="6" class="aboutText txtArea" id="introduce" name="introduce">${aboutvo.getIntroduce() }</textarea></p>				
 				    <input type="hidden"  name="no" value="${aboutvo.no}" />
 				</form>	
@@ -117,7 +123,13 @@
 					<%@ include file="/WEB-INF/jsp/mng/introduceForm.jsp" %>  
 				</div>
 				<div class="modal-footer">
+				<c:choose>
+				<c:when test='${memberdetailvo.getMember_role() eq "A"}'>
 					<button type="button" class="btn btn-default" onclick="saveBtn('frmInsertIntroduce');">저장</button>
+				</c:when>
+				<c:otherwise><b>쓰기 권한 없음</b></c:otherwise>
+				</c:choose>
+					
 <!-- 					<button type="button" class="btn btn-default" onclick="ajaxModalSave(this,'form');">저장</button> -->
 					<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 				</div>
@@ -175,8 +187,14 @@
 								<%@ include file="/WEB-INF/jsp/mng/educationForm.jsp" %>  
 							</div>
 		             <div class="modal-footer">
+
+					<c:choose>
+					<c:when test='${memberdetailvo.getMember_role() eq "A"}'>
+						<button type="button" class="btn btn-default" onclick="saveBtn('frmInsertEducation');">저장</button>
+					</c:when>
+					<c:otherwise><b>쓰기 권한 없음</b></c:otherwise>
+					</c:choose>		             	
 		             	
-		             	<button type="button" class="btn btn-default" onclick="saveBtn('frmInsertEducation');">저장</button>
 <!-- 		             	<button type="button" class="btn btn-default" onclick="ajaxModalSave(this,'form');">저장</button> -->
 		                <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 		             </div>
@@ -238,8 +256,14 @@
 						<%@ include file="/WEB-INF/jsp/mng/careerForm.jsp" %>  
 					 </div>
 		             <div class="modal-footer">
-<!-- 		             	<button type="button" class="btn btn-default" onclick="ajaxModalSave(this,'career');">저장</button> -->
+					<c:choose>
+					<c:when test='${memberdetailvo.getMember_role() eq "A"}'>
 						<button type="button" class="btn btn-default" onclick="saveBtn('frmInsertCareer');">저장</button>
+					</c:when>
+					<c:otherwise><b>쓰기 권한 없음</b></c:otherwise>
+					</c:choose>		   
+
+<!-- 		             	<button type="button" class="btn btn-default" onclick="ajaxModalSave(this,'career');">저장</button> -->
 		                <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 		             </div>
 				  		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
@@ -264,8 +288,15 @@
 								<input type="hidden" value="${carvo.getNo()}"  id="insPrjRefNo" name="ref_no"/>  
 							</div>
 		             <div class="modal-footer">
-<!-- 		             	<button type="button" class="btn btn-default" onclick="ajaxModalSave(this,'career');">저장</button> -->
+					
+					<c:choose>
+					<c:when test='${memberdetailvo.getMember_role() eq "A"}'>
 						<button type="button" class="btn btn-default" onclick="saveBtn('frmInsertCareerDetail');">저장</button>
+					</c:when>
+					<c:otherwise><b>쓰기 권한 없음</b></c:otherwise>
+					</c:choose>	
+
+<!-- 		             	<button type="button" class="btn btn-default" onclick="ajaxModalSave(this,'career');">저장</button> -->
 		                <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 		             </div>
 				  		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
@@ -301,6 +332,7 @@
 					</div>
 					</c:otherwise>
 				</c:choose>
+
 	
 			</div>
 	
@@ -317,7 +349,14 @@
 								<%@ include file="/WEB-INF/jsp/mng/skillForm.jsp" %>
 							</div>
 		             <div class="modal-footer">
+
+					<c:choose>
+					<c:when test='${memberdetailvo.getMember_role() eq "A"}'>
 						<button type="button" class="btn btn-default" onclick="saveBtn('frmInsertSkill');">저장</button>
+					</c:when>
+					<c:otherwise><b>쓰기 권한 없음</b></c:otherwise>
+					</c:choose>
+						
 		                <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 		             </div>
 				  		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
@@ -382,7 +421,14 @@
 							<%@ include file="/WEB-INF/jsp/mng/portfolioForm.jsp" %>  
 						</div>
 	             <div class="modal-footer">
-	             		<button type="button" class="btn btn-default" onclick="javascript:pfModalSaveBtn();">저장</button>
+
+					<c:choose>
+					<c:when test='${memberdetailvo.getMember_role() eq "A"}'>
+						<button type="button" class="btn btn-default" onclick="javascript:pfModalSaveBtn();">저장</button>
+					</c:when>
+					<c:otherwise><b>쓰기 권한 없음</b></c:otherwise>
+					</c:choose>	             		
+	             		
 	                  <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 	             </div>
 			  		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />

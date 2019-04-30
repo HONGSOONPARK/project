@@ -7,7 +7,7 @@
  	<%@ include file="/WEB-INF/include/include-resource.jspf" %>
 </head>
 
-<body data-spy="scroll" data-offset="64" data-target="#section-topbar">
+<body onload="focusTag('id');" data-spy="scroll" data-offset="64" data-target="#section-topbar">
 
 	<section id="adminLogin" name="adminLogin">
 		<div id="intro">

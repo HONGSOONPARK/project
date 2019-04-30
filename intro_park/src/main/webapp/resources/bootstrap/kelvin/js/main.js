@@ -321,6 +321,22 @@ function ajaxSave(obj,type){
 	
 }
 
+
+// 관리자 화면 로그아웃
+function adminLogout(url){
+	if(confirm("로그아웃 하시겠습니까?")){
+		window.location = url;
+	}
+//	$("#frmLogout").submit();
+}
+
+// 태그 포커스
+
+function focusTag(id){
+	$("#"+id).focus();
+}
+
+
 //
 //
 //
