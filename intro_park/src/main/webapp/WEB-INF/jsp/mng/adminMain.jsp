@@ -43,6 +43,11 @@
  
 <body onload="moveScoll('<c:if test="${empty scrollTarget}">null</c:if><c:if test="${!empty scrollTarget}">${scrollTarget }</c:if>');" data-spy="scroll" data-offset="64" data-target="#section-topbar" class="mngMain">
 <%-- <body onload="moveScoll('${scrollTarget }');" data-spy="scroll" data-offset="64" data-target="#section-topbar" class="mngMain"> --%>
+	
+	<form id="frmLogout" method="post" action="<c:url value='/mng/adminLogout'/>" class="displayNone">
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+	</form>
+	
 	<div id="section-topbar">
 		<div id="topbar-inner">
 			<div class="container">
@@ -54,7 +59,7 @@
 							<li class="menu-item"><a class="smothscroll" href="#career" title="career"><i class="fa fa-briefcase"></i></a></li>
 							<li class="menu-item"><a class="smothscroll" href="#skill" title="skill"><i class="fa fa-book"></i></a></li>
 							<li class="menu-item"><a class="smothscroll" href="#portfolio" title="portfolio"><i class="fa fa-folder-open"></i></a></li>
-							<li class="menu-item"><a class="" href="javascript:adminLogout('<c:url value='/mng/adminLogout'/>');" title="logouts"><i class="fa fa-sign-out"></i></a></li>
+							<li class="menu-item"><a class="" href="javascript:adminLogout();" title="logouts"><i class="fa fa-sign-out"></i></a></li>
 						</ul>
 					</div>
 					<div class="clear"></div>
