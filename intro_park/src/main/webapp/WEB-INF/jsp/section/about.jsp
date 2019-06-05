@@ -28,6 +28,10 @@
 			<p><a href="#"><i class="icon-file"></i></a>
 				<sm><a href="#introduce" class="" data-toggle="modal">자기소개서 열람</a>  &nbsp;<span class="glyphicon glyphicon-search"></span></sm>
 			</p>
+			<p><a href="#"><i class="icon-file"></i></a>
+				<sm><a href="<c:url value='/resources/박홍순_포트폴리오.pdf'/> ">포트폴리오 다운</a>  &nbsp;<span class="glyphicon glyphicon-search"></span></sm>
+			</p>
+			
 		</div>
 		
 		<!-- 자기소개 모달 -->
