@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<title>hongsoon</title>
+	<title>홍순의 포트폴리오</title>
 	<%@ include file="/WEB-INF/include/include-resource.jspf" %>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137183362-1"></script>
